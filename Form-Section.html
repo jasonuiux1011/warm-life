@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>讓我來｜填寫陪伴表單</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- =====================================
+        (1) 固定 Logo（左上角，點擊返回首頁）
+        ===================================== -->
+    <div class="logo-fixed">
+        <a href="index.html">
+        <!-- 點擊 Logo 回到首頁 -->
+        <img src="pic/header-logo .png" alt="讓我來" />
+        </a>
+    </div>
+
+
+    <!-- =====================================
+        (2) 左側固定導引圖示（WARM LIFE）
+        ===================================== -->
+    <img
+        src="pic/WARM LIFE.png"
+        alt="WARM LIFE"
+        class="fixed-left-img"
+    />
+
+
+    <!-- =====================================
+        (3) 右側固定導引圖示（SCROLL）
+        ===================================== -->
+    <img
+        src="pic/SCROLL-.png"
+        alt="SCROLL"
+        class="fixed-right-img"
+    />
+
+
+    <!-- =====================================
+        (4) 頁首 Header & 導覽列
+        ===================================== -->
+    <header>
+        <div class="container">
+        <nav>
+            <ul class="main-menu">
+            <li><a href="services.html">陪伴服務總覽</a></li>
+            <li><a href="news-warmlife.html">長照新知快報</a></li>
+            <li><a href="About-warmlife.html">關於「讓我來」</a></li>
+            <li><a href="#ft">聯絡我們</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="btn-login">登入</a>
+        </div>
+    </header>
+
+
+    <!-- =====================================
+        (5) 登入彈窗 Modal
+        ===================================== -->
+    <main>
+        <div id="loginModal" class="modal hidden">
+        <div class="modal-content">
+            <!-- (5-1) 關閉按鈕 -->
+            <button class="modal-close" onclick="hideModal()">✕</button>
+
+            <!-- (5-2) 標題：登入 / 註冊 -->
+            <h2>登入 / 註冊</h2><br />
+
+            <!-- (5-3) 輸入欄位：帳號、密碼 -->
+            <input type="text" placeholder="帳號" />
+            <input type="password" placeholder="密碼" />
+
+            <!-- (5-4) 按鈕：登入 -->
+            <button class="btn-main">登入</button>
+
+            <!-- (5-5) 註冊提示 -->
+            <p class="forget-text">還沒有帳號嗎？</p>
+            <button class="btn-sub">立即註冊</button>
+        </div>
+        </div>
+
+
+        <!-- =====================================
+            (6) Form Section：填寫需求表單
+            ===================================== -->
+        <section class="form-section">
+        <div class="form-card-container">
+
+            <!-- (6-1) 區塊標題 -->
+            <h2 class="form-title">您不孤單，我們會陪您一起</h2>
+
+            <!-- (6-2) 區塊簡短說明 -->
+            <p class="form-intro">
+            我們想更認識您，好為您找到最適合的陪伴者
+            </p>
+
+            <!-- =====================================
+                (6-3) 多張「表單卡片」容器（.form-cards）
+                ===================================== -->
+            <div class="form-cards">
+
+            <!-- --------------------------------
+                (6-3-1) 卡片 1：如何陪伴
+                -------------------------------- -->
+            <div class="form-card">
+                <!-- (6-3-1-a) 左側：問題描述 + 選項 -->
+                <div class="form-content">
+                <label class="form-question">
+                    「您希望我們怎麼陪您呢？」
+                </label>
+                <ul class="form-options">
+                    <li>
+                    <label>
+                        <input
+                        type="checkbox"
+                        name="accompany[]"
+                        value="陪伴門診"
+                        />
+                        陪伴門診
+                    </label>
+                    </li>
+                    <li>
+                    <label>
+                        <input
+                        type="checkbox"
+                        name="accompany[]"
+                        value="陪您聊天、談心"
+                        />
+                        陪您聊天、談心
+                    </label>
+                    </li>
+                    <li>
+                    <label>
+                        <input
+                        type="checkbox"
+                        name="accompany[]"
+                        value="教導您使用電子產品"
+                        />
+                        教導您使用電子產品
+                    </label>
+                    </li>
+                    <li>
+                    <label>
+                        <input
+                        type="checkbox"
+                        name="accompany[]"
+                        value="喘息服務需求"
+                        />
+                        喘息服務需求
+                    </label>
+                    </li>
+                    <li>
+                    <label>
+                        <input
+                        type="checkbox"
+                        name="accompany[]"
+                        value="其他協助"
+                        />
+                        其他協助
+                    </label>
+                    </li>
+                </ul>
+                </div>
+
+                <!-- (6-3-1-b) 右側：小青蛙手掌 Icon -->
+                <div class="form-icon">
+                <img src="pic/logohand.png" alt="吼蛙手掌圖示" />
+                </div>
+            </div>
+
+
+            <!-- --------------------------------
+                (6-3-2) 卡片 2：方便時間
+                -------------------------------- -->
+            <div class="form-card">
+                <!-- (6-3-2-a) 左側：問題描述 + 選項 -->
+                <div class="form-content">
+                <label class="form-question">
+                    「何時時段比較方便我們去找您呢？」
+                </label>
+                <ul class="form-options">
+                    <li>
+                    <label>
+                        <input
+                        type="checkbox"
+                        name="time[]"
+                        value="上午"
+                        />
+                        上午
+                    </label>
+                    </li>
+                    <li>
+                    <label>
+                        <input
+                        type="checkbox"
+                        name="time[]"
+                        value="中午"
+                        />
+                        中午
+                    </label>
+                    </li>
+                    <li>
+                    <label>
+                        <input
+                        type="checkbox"
+                        name="time[]"
+                        value="晚上"
+                        />
+                        晚上
+                    </label>
+                    </li>
+                    <li>
+                    <label>
+                        <input
+                        type="checkbox"
+                        name="time[]"
+                        value="其他"
+                        />
+                        其他 _______
+                    </label>
+                    </li>
+                </ul>
+                </div>
+
+                <!-- (6-3-2-b) 右側：小青蛙手掌 Icon -->
+                <div class="form-icon">
+                <img src="pic/logohand.png" alt="吼蛙手掌圖示" />
+                </div>
+            </div>
+
+
+            <!-- --------------------------------
+                (6-3-3) 卡片 3：地點或區域
+                -------------------------------- -->
+            <div class="form-card">
+                <!-- (6-3-3-a) 左側：問題描述 + 單行輸入 -->
+                <div class="form-content">
+                <label class="form-question">
+                    「我們預計去哪裡陪您呢？（地址或區域）」
+                </label>
+                <input
+                    type="text"
+                    class="form-input"
+                    name="location"
+                    placeholder="請填寫地址或區域"
+                />
+                </div>
+
+                <!-- (6-3-3-b) 右側：小青蛙手掌 Icon -->
+                <div class="form-icon">
+                <img src="pic/logohand.png" alt="吼蛙手掌圖示" />
+                </div>
+            </div>
+
+
+            <!-- --------------------------------
+                (6-3-4) 卡片 4：對象性別
+                -------------------------------- -->
+            <div class="form-card">
+                <!-- (6-3-4-a) 左側：問題描述 + 單選 -->
+                <div class="form-content">
+                <label class="form-question">
+                    「希望陪伴的人是…？」
+                </label>
+                <ul class="form-options">
+                    <li>
+                    <label>
+                        <input
+                        type="radio"
+                        name="gender"
+                        value="男性"
+                        />
+                        男性
+                    </label>
+                    </li>
+                    <li>
+                    <label>
+                        <input
+                        type="radio"
+                        name="gender"
+                        value="女性"
+                        />
+                        女性
+                    </label>
+                    </li>
+                    <li>
+                    <label>
+                        <input
+                        type="radio"
+                        name="gender"
+                        value="男女皆可"
+                        />
+                        男女皆可
+                    </label>
+                    </li>
+                </ul>
+                </div>
+
+                <!-- (6-3-4-b) 右側：小青蛙手掌 Icon -->
+                <div class="form-icon">
+                <img src="pic/logohand.png" alt="吼蛙手掌圖示" />
+                </div>
+            </div>
+
+
+            <!-- --------------------------------
+                (6-3-5) 卡片 5：其他想讓我們知道
+                -------------------------------- -->
+            <div class="form-card">
+                <!-- (6-3-5-a) 左側：問題描述 + 多行輸入 -->
+                <div class="form-content">
+                <label class="form-question">
+                    「您有什麼想讓我們知道的嗎？我們會保密在心」
+                </label>
+                <textarea
+                    class="form-textarea"
+                    name="notes"
+                    rows="3"
+                    placeholder="請寫下您的需求或備註"
+                ></textarea>
+                </div>
+
+                <!-- (6-3-5-b) 右側：小青蛙手掌 Icon -->
+                <div class="form-icon">
+                <img src="pic/logohand.png" alt="吼蛙手掌圖示" />
+                </div>
+            </div>
+
+
+            <!-- --------------------------------
+                (6-3-6) 卡片 6：緊急聯絡人
+                -------------------------------- -->
+            <div class="form-card">
+                <!-- (6-3-6-a) 左側：緊急聯絡人姓名 + 電話 -->
+                <div class="form-content">
+                <label class="form-question">緊急聯絡人：</label>
+                <div class="form-emergency">
+                    <input
+                    type="text"
+                    name="emergency_name"
+                    class="form-input"
+                    placeholder="姓名"
+                    />
+                    <input
+                    type="text"
+                    name="emergency_phone"
+                    class="form-input"
+                    placeholder="聯絡電話"
+                    />
+                </div>
+                </div>
+
+                <!-- (6-3-6-b) 右側：小青蛙手掌 Icon -->
+                <div class="form-icon">
+                <img src="pic/logohand.png" alt="吼蛙手掌圖示" />
+                </div>
+            </div>
+
+            </div>
+            <!-- /div.form-cards -->
+
+
+            <!-- =====================================
+                (6-4) 底部送出按鈕
+                ===================================== -->
+            <div class="form-submit-wrapper">
+            <a href="recommend-section.html">
+                <button type="submit" class="form-submit-btn">
+                讓我來媒合吧~
+                </button>
+            </a>
+            </div>
+
+        </div>
+        <!-- /div.form-card-container -->
+        </section>
+        <!-- /section.form-section -->
+
+    </main>
+
+
+    <!-- =====================================
+        (7) Footer 區塊
+        ===================================== -->
+    <footer id="ft">
+        <div class="footer-container">
+        <!-- (7-1) Footer 左側：Logo + Slogan -->
+        <div class="footer-left">
+            <a href="index.html">
+            <div class="footerlogo">
+                <img src="pic/logo.png" alt="讓我來 Logo" />
+            </div>
+            </a>
+            <div class="footer-slogan">
+            貼心相伴，<br />
+            讓安心成為常在。
+            </div>
+        </div>
+
+        <!-- (7-2) Footer 中間：快速導覽 -->
+        <div class="footer-middle">
+            <h4>快速導覽</h4>
+            <ul>
+            <li><a href="About-warmlife.html">關於「讓我來」</a></li>
+            <li><a href="services.html">陪伴服務總覽</a></li>
+            <li><a href="news-warmlife.html">長照新知快報</a></li>
+            <li><a href="index.html#htu">使用流程</a></li>
+            </ul>
+        </div>
+
+        <!-- (7-3) Footer 右側：聯絡資訊 -->
+        <div class="footer-right">
+            <h4>聯絡資訊</h4>
+            <p>
+            客服專線: 03-456-7777<br />
+            公司地址: 320桃園市中壢區復興路46號9樓<br />
+            客服信箱: warmlife@tibame.com<br />
+            服務時間（週一至週五 09:00-18:00）
+            </p>
+        </div>
+        </div>
+    </footer>
+
+    </body>
+    </html>
+
+
+
+
+
+

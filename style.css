@@ -1,0 +1,2244 @@
+/* =============================
+   全域重置與結構設定
+============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+body {
+    background-color: #F8F4F0; /* 你 header 用的底色，或你想要的色 */
+}
+main {
+  flex: 1;
+}
+
+/* =============================
+   關鍵 .hidden Class
+============================= */
+.hidden {
+  display: none;
+}
+
+/* =============================
+   Splash 區塊
+============================= */
+.main-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+.main-banner.visible {
+  opacity: 1;
+}
+
+.left, .right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.logo {
+  width: 328px;
+  height: 367px;
+  flex-shrink: 0;
+  aspect-ratio: 328 / 367;
+}
+
+.sub-title,
+.right {
+  color: #276E41;
+  font-style: normal;
+}
+
+.sub-title {
+  font-family: Nokora;
+  font-size: 64px;
+  font-weight: 700;
+  letter-spacing: 7.68px;
+  line-height: normal;
+}
+
+.right {
+  font-family: "Abhaya Libre ExtraBold";
+  font-size: 64px;
+  font-weight: 700;
+  letter-spacing: 6.4px;
+}
+
+.slogan {
+  margin-bottom: 32px;
+}
+
+/* =============================
+   固定導引圖示
+============================= */
+.fixed-left-img,
+.fixed-right-img {
+  position: fixed;
+  height: 200px;
+  z-index: 99;
+  pointer-events: none;
+}
+
+.fixed-left-img {
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.fixed-right-img {
+  right: 5px;
+  top: 75%;
+  transform: translateY(-50%);
+}
+
+/* =============================
+   Header & 導覽列
+============================= */
+.logo-fixed {
+  position: absolute;
+  top: 0.3em;
+  left: 1em;
+  z-index: 10;
+}
+
+.logo-fixed img {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+header {
+  background-color: #F8F4F0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  padding: 3.5em 2em;
+  min-height: 64px;
+  position: relative;
+}
+
+header .container {
+  max-width: 1920px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 7em;
+  height: 100%;
+}
+
+.main-menu {
+  list-style: none;
+  display: flex;
+  gap: 5em;
+}
+
+.main-menu a {
+  color: #276E41;
+  font-weight: bold;
+  font-size: 30px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.main-menu a:hover {
+  color: #ea8f6c;
+}
+
+.btn-login {
+  padding: 0.5em 1.5em;
+  background-color: #ea8f6c;
+  color: #fff;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 30px;
+  border: none;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-login:hover {
+  background-color: #d86e4f;
+}
+
+/* =============================
+   Modal 彈跳視窗
+============================= */
+.modal {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 1em;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 450px;
+  height: 750px;
+  position: relative;
+  text-align: center;
+}
+.modal-content h2{
+    font-size: 2em;
+    color: #276E41;
+    margin-top: 2.5em;
+}
+.modal-close {
+  position: absolute;
+  top: 0.8em;
+  right: 0.8em;
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.modal-content input {
+    
+    width: 300px;
+    height: 60px;
+    padding: 0.4em;
+    padding-left: 2em;
+    margin: 1.5em 0;
+    border: 1px solid #e8c4b5;
+    border-radius: 40px;
+    background-color: #ffe9e0;
+}
+
+.btn-main,
+.btn-sub {
+    width: 300px;
+    height: 60px;
+    cursor: pointer;
+    border-radius: 999px;
+    margin-top: 1em;
+    font-weight: bold;
+    padding: 0.7em;
+    background: transparent;
+    border: 1px solid #ea8f6c;
+    color: #ea8f6c;
+}
+
+.btn-main {
+  padding: 0.4em;
+  background-color: #ea8f6c;
+  color: #fff;
+  border: none;
+  transition: background 0.3s;
+}
+
+.btn-main:hover {
+  background-color: #d86e4f;
+}
+
+
+
+.forget-text {
+  font-size: 0.85em;
+  color: #555;
+  margin: 1em 0 0.3em;
+  text-align: left;
+  padding-left: 5em;
+}
+
+/* =============================
+   Hero Banner
+============================= */
+.hero-banner {
+  position: relative;
+  width: 90%;
+  max-width: 1920px;
+  height: 840px;
+  margin: 0 auto;
+  box-shadow: 20px 20px 50px rgba(226, 125, 96, 0.4);
+  border-radius: 2em 0 2em 2em;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 2em 0 2em 2em;
+  box-shadow: 20px 20px 50px rgba(226, 125, 96, 0.4);
+  object-fit: cover;
+}
+
+.hero-text-box {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 2em 3em;
+  border-radius: 2em;
+  box-shadow: 20px 20px 50px rgba(226, 125, 96, 0.4);
+  z-index: 5;
+  text-align: center;
+}
+
+.hero-text-box h1 {
+    font-size: 3em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #276E41;
+    margin-top: 0.3em;
+}
+
+.hero-text-box p {
+    font-size: 2em;
+    color: #555;
+    margin-top: 0.5em;
+}
+.hero-text-box-about {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    width: 100%; 
+    text-align: center;
+    justify-content: center;
+}
+
+.hero-text-box-about p {
+    font-size: 2em;
+    color: #ffffff;
+    letter-spacing: 8px;
+    margin-top: 0.5em;
+    margin-left:19%;
+    max-width: 62%;      /* 增加最大寬度 */
+    white-space: normal;   /* 允許換行 */   
+    word-break: break-all;
+    
+}
+
+.btn-main {
+    display: inline-block;
+    padding: 0.5em 2em;
+    background-color: #ea8f6c;
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.btn-sub {
+    display: inline-block;
+    padding: 0.5em 2em;
+    background-color: #ffffff;
+    color: #ea8f6c;
+    border: none;
+    border-radius: 40px;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-decoration: none;
+    transition: background 0.3s;
+    border: 1px solid #ea8f6c;
+}
+
+.btn-main:hover {
+  background-color: #d86e4f;
+}
+
+/* =============================
+   服務特色 Feature 區塊
+============================= */
+.feature-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 64px;
+  color: #000;
+  margin: 100px 0px 40px;
+  letter-spacing: 5px;
+}
+
+.feature-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 150px;
+}
+
+.feature-card {
+  background: #fff;
+  padding: 24px;
+  border: 2px solid #ccc;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.feature-card.small {
+  width: 400px;
+  box-shadow: 20px 20px 50px rgba(226, 125, 96, 0.4);
+  filter: blur(2px);
+  opacity: 0.6;
+  transition: filter 0.4s;
+}
+
+.feature-card.main {
+  width: 450px;
+  transform: scale(1.05);
+  border-color: #F49C64;
+  box-shadow: 20px 20px 50px rgba(226, 125, 96, 0.4);
+  filter: none;
+  opacity: 1;
+  z-index: 2;
+}
+
+.feature-pic {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.feature-title {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.feature-desc {
+  font-size: 24px;
+  line-height: 36px;
+  color: #444;
+}
+
+.feature-card-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10em;
+  margin-top: 1.5em;
+}
+
+.feature-card-controls button {
+  padding: 0.5em 2em;
+  background: #ea8f6c;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.feature-card-controls button:hover {
+  background: #d86e4f;
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* =============================
+   使用者見證 Testimonial 區塊
+============================= */
+.testimonial-section {
+  position: relative;
+  width: 100%;
+  padding: 200px 0;
+  margin-top: 100px;
+  background-color: transparent;
+}
+
+.bg-wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+}
+
+.frog-icon,
+.foot-icon,
+.leaf-icon {
+  position: absolute;
+  z-index: 1;
+}
+
+.frog-icon {
+  top: 140px;
+  left: 10%;
+  width: 180px;
+}
+
+.foot-icon {
+  top: 370px;
+  left: 7%;
+  width: 190px;
+}
+
+.leaf-icon {
+  top: 200px;
+  left: 80%;
+  width: 180px;
+}
+
+.testimonial-container {
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 500px;
+}
+
+.testimonial-user {
+  position: absolute;
+  top: 70%;
+  left: 4%;
+  transform: translateY(-50%);
+  text-align: center;
+  width: 300px;
+}
+
+.user-img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.user-name {
+  margin-top: 16px;
+  font-size: 48px;
+  font-weight: bold;
+  color: #000;
+  line-height: 1.2;
+}
+
+.testimonial-bubble {
+  position: absolute;
+  top: 70%;
+  right: -1%;
+  transform: translateY(-50%);
+  width: 800px;
+  text-align: left;
+}
+
+.bubble-bg {
+  width: 800px;
+  height: 600px;
+  display: block;
+}
+
+.bubble-text {
+  position: absolute;
+  top: 20%;
+  left: 15%;
+  right: 10%;
+  font-size: 30px;
+  line-height: 1.2;
+  color: #fff;
+  z-index: 3;
+}
+
+/* =============================
+   三步驟 Process 區塊
+============================= */
+.process-section {
+  max-width: 1440px;
+  margin: 300px auto 0;
+  padding: 0 10px;
+  text-align: center;
+}
+
+.process-title {
+  font-size: 64px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 250px;
+  line-height: 1.2;
+}
+
+.process-graphic-wrapper {
+  max-width: 1440px;
+  width: 100%;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.process-graphic {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.process-text-wrapper-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1440px;
+  width: 95%;
+  margin: 10px auto;
+}
+
+.process-step {
+  flex: 0 0 320px;
+  text-align: start;
+}
+
+.step-heading {
+  font-size: 40px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.step-desc {
+  font-size: 26px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* =============================
+   關於吼蛙 區塊
+============================= */
+/* =========== 吼蛙專區 CSS =========== */
+
+/* 1. Frog Section 容器 */
+.frog-section {
+  width: 100%;
+  max-width: 1660px;    /* 可依版心需求調整 */
+  margin: 200px auto;   /* 上方 160px，水平置中 */
+  padding: 0 20px;      /* 左右各 20px 內距 */
+}
+
+/* 2. Frog Row：左右排版 */
+.frog-row {
+  display: flex;
+  flex-wrap: wrap;            /* 螢幕窄時可換行 */
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;                  /* 左右區塊之間保留一點間距 */
+  margin-bottom: 2rem;
+}
+
+/* 3. 左邊：吼蛙圖片（內容圖） */
+.frog-image-wrapper {
+  flex: 1 1 40%;              /* 最少佔 50%，可依需求微調 */
+  max-width: 40%;
+  overflow: hidden;
+}
+
+.frog-image-main {
+  width: 60%;
+  height: auto;
+  object-fit: cover;          /* 若比例不同，可等比例裁切 */
+  display: block;
+}
+
+/* 4. 右邊：吼蛙文字內容 */
+.frog-text-wrapper {
+  flex: 1 1 55%;              /* 最少佔 45%，可自行調整 */
+  max-width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;    /* 垂直置中 */
+  padding-left: 1em;         /* 與左邊保留 1rem 間距 */
+}
+
+/* 5. 吼蛙標題 */
+.frog-title {
+  font-size: 48px;
+  font-weight: bold;
+  color: #276E41;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+/* 6. 吼蛙段落 */
+.frog-paragraph {
+  font-size: 30px;
+  line-height: 1.4;
+  letter-spacing: 1.2px;
+  color: #276E41;
+  margin: 0 0 1.5rem 0;        /* 底部留 1.5rem 行距 */
+  text-align: left;         /* 兩端對齊，可改 left */
+  white-space: pre-line;       /* 讓 <br> 生效 */
+}
+
+
+
+/* =============================
+   配對 CTA 區塊
+============================= */
+.cta-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 20em;
+  margin: 15em 0;
+}
+
+.cta-card {
+  width: 600px;
+  height: 600px;
+  padding: 2em 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.cta-card.cta-left {
+  background: #BACCBB;
+  border-radius: 250px 0 250px 250px;
+  box-shadow: 0 4px 100px rgba(186, 204, 187, 0.7);
+  margin-top: 5em;
+}
+
+.cta-card.cta-right {
+  background: #E27D60;
+  border-radius: 250px 250px 250px 0;
+  box-shadow: 0 4px 100px rgba(226, 125, 96, 0.7);
+}
+
+.cta-title {
+  margin-top: 0.5em;
+  font-size: 64px;
+  font-weight: 500;
+  letter-spacing: 7.68px;
+  color: #fff;
+}
+
+.cta-button {
+  margin-top: 1em;
+  padding: 0.5em 2em;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 42px;
+  letter-spacing: 5.76px;
+  border: none;
+  border-radius: 40px;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.cta-button {
+  width: 446px;
+  height: 145px;
+  background-color: #E27D60;
+  color: #fff;
+  border-radius: 250px 0 250px 250px;
+}
+
+.cta-button-right {
+  background-color: #BACCBB;
+  border-radius: 250px 250px 250px 0;
+}
+
+.cta-button:hover,
+.cta-button-right:hover {
+  transform: translateY(-2px) scale(1.05);
+}
+
+.cta-button:hover {
+  background: #d86e4f;
+}
+
+.cta-button-right:hover {
+  background: #91ae92;
+}
+
+
+/* =============================
+   Detail Popup（中間白色卡片）
+============================= */
+
+/* (1) 如果需要「整頁遮罩→灰色半透明背景」，就用以下這段； 
+       若只想在白卡片上下留空，而不蓋滿整個畫面，可把 .detail-popup-wrapper 設為 width:auto/height:auto 或拿掉背景色 */
+.detail-popup-wrapper {
+  position: fixed;
+  inset: 0;                                /* top:0; right:0; bottom:0; left:0; */
+  background-color: rgba(0, 0, 0, 0.2);   /* 半透明黑背景 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;                            /* 確保蓋在最前面 */
+}
+
+/* (2) 白色卡片外層容器 */
+.detail-popup {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  display: flex;
+  overflow: hidden;          /* 圓角下圖片區不外溢 */
+  max-width: 1200px;          /* 最寬 900px，可隨需求調整 */
+  width: 90%;                /* 寬度佔 90% 視窗，RWD 用 */
+  max-height: 500px;         /* 高度最大 500px，可依內容調整 */
+}
+
+/* (3) 左側圖片容器 */
+.popup-image {
+  flex: 0 0 40%;             /* 左側佔 40% 空間 */
+  overflow: hidden;
+}
+.popup-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;         /* 如果圖片比例不符，裁切橫向或直向 */
+  display: block;
+}
+
+/* (4) 右側文字區塊 */
+.popup-content {
+  position: relative;        /* 讓關閉鈕絕對定位 */
+  flex: 1;                   /* 右側佔 60% 空間 */
+  padding: 24px 32px;        /* 內距，上下 24px，左右 32px */
+  overflow-y: auto;          /* 若文字超長，可垂直捲動 */
+}
+
+/* (5) 關閉按鈕：右上角「×」 */
+.popup-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 1;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.popup-close:hover {
+  color: #ea8f6c;
+}
+
+/* (6) 標題 */
+.popup-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 35px;
+    letter-spacing: 7.68px;
+}
+
+/* (7) 內文段落 */
+.popup-text {
+    font-size: 20px;
+    color: #333;
+    line-height: 1.6;
+    letter-spacing: 9px;
+    text-align: justify;     /* 兩端對齊 */
+}
+
+
+/* =============================
+   介紹服務 Intro Services（只用圖片，不需文字）
+============================= */
+.intro-services {
+
+
+  padding: 150px 20px;          /* 上下留白 100px、左右 20px */
+  background-color: #F8F4F0;     /* 如需背景色，可自行調整 */
+  text-align: center;            /* 標題置中 */
+}
+
+.intro-title {
+  font-size: 48px;
+  color: #000;
+  margin-bottom: 150px;
+  font-weight: bold;
+  letter-spacing: 7.68px;
+
+}
+
+/* icon-grid：三欄 × 二列 */
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 120px 60px;                /* row-gap 40px、col-gap 60px */
+  max-width: 1200px;             /* 最寬 1200px，置中 */
+  margin: 0 auto;
+  justify-items: center;         /* 每張圖置中對齊 */
+}
+
+.service-icon {
+  width: 120px;                  /* 每張圖片顯示寬度為 120px */
+  height: auto;                  /* 自動按比例縮放 */
+  object-fit: contain;
+  transition: transform 0.7s, box-shadow 0.7s, filter 1s, opacity 1s;
+  cursor: pointer;
+}
+.service-icon:hover {
+  transform: translateY(-8px) scale(1.15);
+  filter: none;
+  opacity: 1;
+}
+
+
+/* =============================
+   about 區塊
+============================= */
+
+/* ====================================
+   About 區塊：整體容器
+   ==================================== */
+.about-section {
+  width: 100%;
+  max-width: 1720px;   /* 可依需求調整最大寬度 */
+  margin: 250px auto;  /* 上方 160px，置中 */
+  padding: 0 20px;     /* 左右各 20px 緩衝 */
+}
+
+/* ====================================
+   About-row：flex 排版，左右各自撐開
+   ==================================== */
+.about-row {
+  display: flex;
+  justify-content: space-between; /* 左右兩端對齊，中間留空 */
+  align-items: center;
+  margin-bottom: 280px;           /* 列與列之間的垂直間距 */
+}
+
+/* 如果要反向排列，保留這一段即可 */
+.about-row.row-reverse {
+  flex-direction: row-reverse;
+}
+
+/* ====================================
+   左側 圖片容器 (.about-image)
+   ==================================== */
+/* 佔父容器 45% 寬度 */
+.about-image {
+  flex: 0 0 45%;
+  max-width: 45%;
+  overflow: hidden;
+  border-radius: 40px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* 圖片本身依寬度撐滿，無白邊 */
+.about-image img {
+  width: 100%;
+  height: auto;     /* 按比例縮放 */
+  object-fit: cover;
+  display: block;
+}
+
+/* ====================================
+   右側 文字容器 (.about-text)
+   ==================================== */
+/* 佔父容器 45% 寬度 */
+.about-text {
+  flex: 0 0 45%;
+  max-width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20px;  /* 文字略往右偏移，與圖片保持間距 */
+}
+
+/* 標題 */
+.about-title {
+  font-size: 48px;
+  font-weight: bold;
+  color: #276E41;
+  margin: 0 0 16px 0;  /* 標題下方 16px */
+}
+
+/* 段落文字 */
+.about-paragraph {
+  font-size: 30px;
+  line-height: 1.4;
+  letter-spacing: 1.2px;
+  color: #276E41;
+  margin: 0;
+  text-align: justify;   /* 兩端對齊 */
+  white-space: pre-line; /* 保留 <br> 換行 */
+}
+
+/* =============================
+   NEWS 區塊
+============================= */
+/* ===============================================
+   News 快報區塊：全新 class，不會與既有樣式衝突
+=============================================== */
+
+/* 1. 區塊外框 */
+.news-section {
+  width: 100%;
+  max-width: 1440px;    /* 可依實際想要的版心調整 */
+  margin: 160px auto;   /* 上方 160px，置中 */
+  padding: 0 20px;      /* 左右間距 20px */
+}
+
+.news-title {
+  font-size: 48px;
+  color: #276E41;       /* 深綠字色 */
+  text-align: center;
+  margin-bottom: 100px;
+  letter-spacing: 4px;
+}
+
+/* 2. 卡片列表容器：垂直堆疊，間距 30px */
+.news-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;            /* 卡片間垂直間距 */
+}
+
+/* 3. 單張卡片整體樣式 */
+.news-card {
+  display: flex;
+  align-items: flex-start;       /* 讓文字多行也能自動從頂端對齊 */
+  background-color: #ffffff;     /* 白底 */
+  border-radius: 16px;           /* 卡片圓角 */
+  box-shadow: 0 0 20px rgba(226, 125, 96, 0.4); 
+                                 /* 淺珊瑚色陰影(偏橘)：x偏移0 y偏移0 模糊20px */
+  padding: 20px;                 /* 卡片內距 */
+}
+
+
+/* 4. 卡片內部區塊：圖片/文字/Icon 的比例設定 */
+/* 左側縮圖 */
+.card-image {
+  flex: 0 0 400px;        /* 固定 200px 寬，不會縮放 */
+  max-width: 400px;
+  overflow: hidden;       /* 若圖片超出，隱藏 */
+  border-radius: 12px;    /* 縮圖圓角 */
+  margin-right: 20px;     /* 與中間文字保持 20px 間距 */
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;      /* 等比例裁切到滿版 */
+  display: block;
+}
+
+/* 中間文字區 */
+.card-content {
+  flex: 1;                /* 自動撐滿剩餘空間 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 如果文字較少，讓標題靠中間垂直置中 */
+}
+
+.card-title {
+  font-size: 36px;
+  color: #276E41;         /* 深綠 */
+  margin: 0 0 40px 0;     /* 下方留 10px */
+  letter-spacing: 5px;
+}
+
+.card-text {
+  font-size: 30px;
+  line-height: 1.6;
+  color: #444;            /* 深灰文字 */
+  margin: 30px;   
+  letter-spacing: 3px;           /* 多行段落自行換行 */
+}
+
+/* 右側小青蛙手掌 Icon */
+.card-icon {
+  flex: 0 0   120px;         /* 固定 80px 寬度 */
+  max-width: 120px;
+  margin-left: 10px;      /* 與中間文字保持 20px 間距 */
+  padding-top: 10%; /* 讓整張圖往下錯行 10px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-icon img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ================================
+   登入後填寫表單
+================================ */
+
+.form-section {
+  display: flex;
+  justify-content: center;   /* 讓大卡片水平置中 */
+  background-color: #F8F4F0; /* 外層底色，可依設計調整或刪除 */
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1600px;       /* 依 Figma 設計，大約 600px 寬即可 */
+  margin: 100px auto;     /* 上方 100px，置中 */
+  padding: 40px 50px;        /* 左右內距 20px */
+  box-sizing: border-box;
+}
+ .form-card-container {
+  max-width: 1200px;                     /* 依 Figma 設計，大約 800px 寬即可 */
+   background-color: #ffffff;                 /* 白底 */
+   border: 1px solid #e8c4b5;                 /* 淺珊瑚色邊框 */
+   border-radius: 20px;                       /* 大卡片圓角 */
+   box-shadow: 0 8px 24px rgba(255, 171, 148, 0.2); /* 大卡片陰影 */
+   padding: 50px 50px;                        /* 內距，上下32、左右24 */
+  box-sizing: border-box;
+ }
+
+
+/* 2. .form-title：標題 */
+.form-title {
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  color: #276E41;         /* 深綠色 */
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* 3. .form-intro：簡短說明 */
+.form-intro {
+  font-size:24px;
+  color: #444;            /* 深灰色 */
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+/* 4. .form-cards：卡片列表容器 */
+.form-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;              /* 卡片間距 20px */
+}
+
+/* 5. .form-card：單張卡片 */
+.form-card {
+  display: flex;
+  align-items: flex-start;          /* 文字如果有多行，靠上對齊 */
+  background-color: #ffffff;        /* 白底 */
+  border: 1px solid #e8c4b5;        /* 淺珊瑚色邊框 */
+  border-radius: 12px;              /* 卡片圓角 */
+  box-shadow: 0 4px 16px rgba(226, 125, 96, 0.2); /* 淺珊瑚陰影 */
+  padding: 16px 20px;               /* 卡片內距上下 16、左右 20 */
+  position: relative;
+}
+
+/* (5-1) 卡片左側內容 .form-content */
+.form-content {
+  flex: 1;                          /* 撐滿剩餘空間 */
+  display: flex;
+  flex-direction: column;
+}
+
+/* (5-1a) 問題文字 .form-question */
+.form-question {
+  font-size: 24px;
+  font-weight: bold;
+  color: #276E41;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+/* (5-1b) 多選／單選列表 .form-options */
+.form-options {
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+}
+
+.form-options li {
+  margin-bottom: 6px;
+}
+
+.form-options label {
+  font-size: 20px;
+  color: #444;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.form-options input[type="checkbox"],
+.form-options input[type="radio"] {
+  margin-right: 8px;
+  width: 18px;
+  height: 18px;
+}
+
+/* (5-1c) 單行文字輸入 .form-input */
+.form-input {
+  font-size: 18px;
+  padding: 15px 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus {
+  border-color: #ea8f6c; /* 聚焦時邊框變珊瑚色 */
+}
+
+/* (5-1d) 多行文字 .form-textarea */
+.form-textarea {
+  font-size: 18px;
+  padding: 15px 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  resize: vertical;      /* 只允許垂直拉高 */
+  min-height: 60px;      /* 最小高度 */
+  transition: border-color 0.2s;
+  margin-top: 10px;
+}
+
+.form-textarea:focus {
+  border-color: #ea8f6c;
+}
+
+/* (5-1e) 緊急聯絡人區塊 .form-emergency */
+.form-emergency {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;              /* 兩個 input 之間間距 */
+}
+
+.form-emergency .form-input {
+  /* 同上 .form-input 樣式，就不再重複 */
+}
+
+/* (5-2) 卡片右側 Icon .form-icon */
+.form-icon {
+  flex: 0 0 60px;        /* 固定 60px 寬 */
+  max-width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* 預設置頂，如果要往下可自行加 margin-top */
+  margin-left: 12px;
+}
+
+.form-icon img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 6. .form-submit-wrapper：送出按鈕區域 */
+.form-submit-wrapper {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.form-submit-btn {
+  font-size: 24px;
+  padding: 12px 40px;
+  background-color: #ea8f6c;   /* 珊瑚色按鈕 */
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.form-submit-btn:hover {
+  background-color: #d86e4f;   /* 懸停時加深 */
+  transform: translateY(-2px);
+}
+
+/* ===============================================
+   推薦陪伴者頁面 CSS（全新 recommend-… class）
+=============================================== */
+
+/* 1. recommend-section：最外層，用來水平置中大卡片 */
+.recommend-section {
+  display: flex;
+  justify-content: center;     /* 大卡片水平置中 */
+  padding: 40px 50px;          /* 外層左右內距 */
+  background-color: #F8F4F0;    /* 可依設計調整或移除 */
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 60px;     
+    box-shadow: 0 10px 10px rgba(252, 180, 161, 0.2);
+}
+
+/* 2. recommend-container：大白卡外觀 */
+.recommend-container {
+  background-color: #ffffff;
+  border: 1px solid #e8c4b5;     /* 淺珊瑚色邊框 */
+  border-radius: 20px;           /* 四角圓弧 */
+  box-shadow: 0 10px 10px rgba(252, 180, 161, 0.2);
+  padding: 40px 50px;            /* 卡片上下左右內距 */
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1200px;             /* 可以按需改成 1400px 或刪除 */
+  position: relative;            /* 讓關閉按鈕可絕對定位 */
+}
+
+/* 3. recommend-header：標題與關閉按鈕同列 */
+.recommend-header {
+  display: flex;
+  justify-content: center;       /* 標題水平置中 */
+  align-items: center;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+/* 標題文字 */
+.recommend-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #276E41;                /* 深綠色 */
+  letter-spacing: 5px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* 關閉按鈕 (右上角 X) */
+.recommend-close {
+  position: absolute;
+  right: 0;
+  top: -10px; /* 調整位置讓它靠近標題 */
+  background: none;
+  border: none;
+  font-size: 60px;
+  line-height: 1;
+  color: #444;
+  cursor: pointer;
+  padding: 8px;
+  transition: color 0.2s;
+}
+.recommend-close:hover {
+  color: #ea8f6c; /* 懸停時改成珊瑚色 */
+}
+
+/* 4. recommend-grid：小卡片網格 */
+.recommend-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;                    /* 卡片間距 */
+  width: 100%;
+}
+
+/* 5. recommend-card：單張小卡片 */
+.recommend-card {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(226, 125, 96, 0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.recommend-card:hover {
+  transform: translateY(-4px); /* 輕微浮起 */
+  box-shadow: 0 8px 24px rgba(226, 125, 96, 0.3);
+}
+
+/* 小卡片頂部圖片 */
+.recommend-card-img {
+  width: 100%;
+  height: 250px;               /* 固定高度，依設計可調整 */
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* 名字 */
+.recommend-card-name {
+  font-size:24px;
+  font-weight: bold;
+  color: #276E41;
+  margin: 12px 0 8px 0;
+  text-align: center;
+  padding: 0 12px;             /* 兩側留白，免得文字貼邊 */
+}
+
+/* 簡介描述 */
+.recommend-card-desc {
+  font-size: 20px;
+  color: #444;
+  text-align: left;
+  margin: 0 0 12px 0;
+  padding: 0 12px;             /* 兩側留白 */
+  line-height: 1.4;
+}
+
+/* 價格與可陪時間 */
+.recommend-card-info {
+  font-size: 16px;
+  color: #444;
+  text-align: left;
+  margin: 0 0 16px 0;
+  padding: 0 12px;             /* 兩側留白 */
+  line-height: 1.5;
+}
+/* 安排時間按鈕 */
+.recommend-btn {
+  font-size: 16px;
+  color: #ea8f6c;             /* 珊瑚色文字 */
+  background-color: #ffffff;  /* 白底 */
+  border: 1px solid #ea8f6c;  /* 珊瑚色邊框 */
+  border-radius: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  margin-top: auto;           /* 把按鈕推到底部 */
+}
+
+.recommend-btn:hover {
+  background-color: #ea8f6c;  /* 懸停時變珊瑚底 */
+  color: #ffffff;
+}
+
+/* ===========================================
+   0. Modal 初始隱藏（非常重要！）
+=========================================== */
+.profile-modal {
+  display: none; /* 一開始隱藏 */
+  position: fixed;
+  inset: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* 遮罩 */
+.profile-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal 本體 */
+.profile-modal-content {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 500px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  z-index: 1001;
+}
+
+/* -------------------------------------------
+   1. Profile Modal Header (大圖 + 關閉按鈕)
+-------------------------------------------- */
+.profile-modal-header {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+}
+
+.profile-modal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  font-size: 24px;
+  line-height: 1;
+  color: #444;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.profile-modal-close:hover {
+  background-color: #ea8f6c;
+  color: #fff;
+}
+
+/* -------------------------------------------
+   2. Profile Modal Body (文字內容)
+-------------------------------------------- */
+.profile-modal-body {
+  padding: 20px 24px 32px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-name-age-city {
+  font-size: 24px;
+  font-weight: bold;
+  color: #276E41;
+  margin: 0;
+  text-align: center;
+}
+
+.profile-age-city {
+  font-size: 16px;
+  color: #444;
+  font-weight: normal;
+  margin-left: 8px;
+}
+
+.profile-rate {
+  font-size: 18px;
+  color: #444;
+  text-align: center;
+  margin: 12px 0 16px 0;
+  letter-spacing: 1px;
+}
+
+.profile-tags {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 16px;
+}
+
+.profile-tag {
+  font-size: 14px;
+  color: #ea8f6c;
+  border: 1px solid #ea8f6c;
+  border-radius: 12px;
+  padding: 4px 8px;
+  white-space: nowrap;
+}
+
+.profile-desc {
+  font-size: 20px;
+  color: #444;
+  line-height: 1.5;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+.profile-specialties {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 24px;
+}
+
+.profile-specialty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.profile-icon {
+  width: 70px;
+  height: 80px;
+}
+
+.profile-action-btn {
+  background-color: #ea8f6c;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 12px;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+  margin: 0 auto;
+  margin-left: 40px;
+  width: 80%;
+}
+
+.profile-action-btn:hover {
+  background-color: #d86e4f;
+  transform: translateY(-2px);
+}
+
+/* -------------------------------------------
+   3. 推薦陪伴者大卡片以及小卡片 
+-------------------------------------------- */
+.recommend-section {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #F8F4F0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.recommend-container {
+  background-color: #ffffff;
+  border: 1px solid #e8c4b5;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(255, 171, 148, 0.2);
+  padding: 40px 30px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+}
+
+.recommend-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+
+
+.recommend-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: none;
+  border: none;
+  font-size: 24px;
+  line-height: 1;
+  color: #444;
+  cursor: pointer;
+  padding: 8px;
+  transition: color 0.2s;
+}
+.recommend-close:hover {
+  color: #ea8f6c;
+}
+
+.recommend-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  width: 100%;
+}
+
+.recommend-card {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(226, 125, 96, 0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.recommend-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(226, 125, 96, 0.3);
+}
+
+.recommend-card-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.recommend-card-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #276E41;
+  margin: 12px 0 8px 0;
+  text-align: center;
+  padding: 0 12px;
+}
+
+.recommend-card-desc {
+  font-size: 20px;
+  color: #444;
+  text-align: left;
+  margin: 0 0 12px 0;
+  padding: 0 12px;
+  line-height: 1.4;
+}
+
+.recommend-card-info {
+  font-size: 20px;
+  color: #444;
+  text-align: left;
+  margin: 0 0 16px 0;
+  padding: 0 12px;
+  line-height: 1.5;
+}
+
+.recommend-btn {
+  font-size: 20px;
+  color: #ea8f6c;
+  background-color: #ffffff;
+  border: 1px solid #ea8f6c;
+  border-radius: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  margin-top: auto;
+}
+
+.recommend-btn:hover {
+  background-color: #ea8f6c;
+  color: #ffffff;
+}
+
+/* =============================
+   (0) 大白卡：dashboard-card
+============================= */
+.dashboard-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(226, 125, 96, 0.15);
+  padding: 24px;       /* 內距可以再微調 */
+  margin: 90px auto;   /* 與頁面其他區塊的外距 */
+  max-width: 1440px;   /* 與 dashboard-grid 同寬 */
+}
+
+/* =============================
+   (1) Dashboard 整體 Grid 容器
+============================= */
+.dashboard-grid {
+  display: grid;
+  grid-template-areas:
+    "sidebar greeting  greeting"
+    "sidebar today     calendar"
+    "sidebar visit     chat"
+    "sidebar mini      mini";
+  grid-template-columns: 240px 1fr 1fr;
+  grid-template-rows: 
+    auto    /* greeting 這一列高度由內容決定 */
+    auto    /* today   這一列高度由內容決定 */
+    auto    /* visit/chat 這一列高度由內容決定 */
+    auto;   /* mini   這一列高度由內容決定 */
+  gap: 40px;   /* 區塊之間的空隙 */
+}
+
+/* =============================
+   (A) 左側 Sidebar：大頭照 + 功能列
+============================= */
+.sidebar {
+  grid-area: sidebar;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(245, 172, 151, 0.2);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 大頭照 */
+.avatar-wrapper {
+  width:250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 50px;
+  margin-top: 30px;
+  margin-left: 10px; /* 左側留白 */
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 功能列按鈕 */
+.sidebar-nav {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.nav-btn {
+  width: 100%;
+  height: 60px;
+  padding: 10px 0;
+  background-color: #ffffff;
+  color: #ea8f6c;
+  border: 1px solid #ea8f6c;
+  border-radius: 24px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-btn:hover {
+  background-color: #ea8f6c;
+  color: #ffffff;
+}
+
+/* =============================
+   (B) 上方 Greeting
+============================= */
+.greeting {
+  grid-area: greeting;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(226, 125, 96, 0.2);
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* 青蛙小手 icon */
+.greeting-icon {
+  width: 50px;
+  height: 50px;
+  margin-right: 12px;
+}
+
+/* 問候文字 */
+.greeting-text {
+  font-size: 24px;
+  color: #444;
+  line-height: 1.5;
+  font-weight: bold;
+  flex: 1;
+}
+
+/* 高亮數字 */
+.highlight {
+  color: #ea8f6c;
+  font-weight: bold;
+}
+
+/* 右上關閉 X */
+.header-close {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  background: none;
+  border: none;
+  font-size: 50px;
+  color: #444;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.header-close:hover {
+  color: #ea8f6c;
+}
+
+/* =============================
+   (C) 今日行程
+============================= */
+.today-schedule {
+  grid-area: today;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(226, 125, 96, 0.2);
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  
+}
+
+.section-title-e {
+  font-size: 20px;
+  color: #276E41;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/* 行程列表 */
+.schedule-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  gap: 12px;
+}
+
+.schedule-item {
+  display: flex;
+  align-items: center;
+  background-color: #FDF7F2;
+  border-radius: 12px;
+  padding: 12px 20px;
+}
+
+.schedule-icon {
+  width: 60px;
+  height: 70px;
+  margin-right: 12px;
+}
+
+.schedule-info {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.schedule-type {
+  font-size: 20px;
+  color: #444;
+}
+
+.schedule-time {
+  font-size: 20px;
+  color: #444;
+  margin-right: 20px;
+}
+
+/* 一鍵通話按鈕 */
+.call-btn {
+  background-color: #ea8f6c;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+.call-btn:hover {
+  background-color: #d86e4f;
+  transform: translateY(-2px);
+}
+
+/* =============================
+   (D) 月曆
+============================= */
+.calendar-box {
+  grid-area: calendar;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(226, 125, 96, 0.2);
+  padding: 16px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.calendar-month {
+  margin-top: 40px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #276E41;
+}
+
+.calendar-year {
+  margin-top: 40px;
+  font-size: 24px;
+  color: #444;
+}
+
+/* 簡易月曆表格 */
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 20px;
+  margin-top: 50px;
+}
+.calendar-table th,
+.calendar-table td {
+  text-align: center;
+  padding: 6px 0;
+}
+.calendar-table th {
+  color: #276E41;
+}
+.calendar-table td.disabled {
+  color: #ccc;
+}
+
+/* =============================
+   (E) 陪伴就診 小卡片
+============================= */
+.card-visit-e {
+  grid-area: visit;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(226, 125, 96, 0.2);
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title-e {
+  font-size: 30px;
+  font-weight: bold;
+  color: #276E41;
+  margin-bottom: 12px;
+}
+
+.card-content-e {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-date-e,
+.card-time-e {
+  font-size: 24px;
+  color: #444;
+  font-weight: bold;
+}
+
+.card-client-e {
+  font-size: 24px;
+  color: #444;
+  font-weight: bold;
+}
+
+.card-actions-e {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.card-btn-e {
+  height: 50px;
+  padding: 6px 55px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-right: auto;
+  font-size: 20px; /* 或你想要的大小，例如 20px */
+  font-weight: bold;
+}
+
+.detail-btn-e {
+  background-color: #ffffff;
+  color: #ea8f6c;
+  border: 1px solid #ea8f6c;
+}
+.detail-btn-e:hover {
+  background-color: #ea8f6c;
+  color: #ffffff;
+}
+
+.edit-btn-e {
+  background-color: #ffffff;
+  color: #276E41;
+  border: 1px solid #276E41;
+}
+.edit-btn-e:hover {
+  background-color: #276E41;
+  color: #ffffff;
+}
+
+.postpone-btn-e {
+  background-color: #ffffff;
+  color: #444;
+  border: 1px solid #ccc;
+}
+.postpone-btn-e:hover {
+  background-color: #ccc;
+  color: #ffffff;
+}
+
+/* =============================
+   (F) 陪伴聊天 小卡片
+============================= */
+.card-chat-f {
+  grid-area: chat;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(226, 125, 96, 0.2);
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+}
+/* 內容同 .card-visit，所以不再重複 */
+
+/* =============================
+   (G) 迷你行程列表
+============================= */
+.mini-schedule- {
+  grid-area: mini;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(226, 125, 96, 0.2);
+  padding: 16px 20px;
+}
+
+.mini-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  color: #444;
+  line-height: 1.6;
+}
+
+.mini-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.mini-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.mini-dot.green {
+  background-color: #276E41;
+}
+
+.mini-dot.orange {
+  background-color: #ea8f6c;
+}
+
+/* =============================
+   響應式：寬度 < 1024px 時調整 Grid
+============================= */
+@media (max-width: 1023px) {
+  .dashboard-grid {
+    grid-template-areas:
+      "sidebar greeting"
+      "sidebar today"
+      "sidebar calendar"
+      "sidebar visit"
+      "sidebar chat"
+      "sidebar mini";
+    grid-template-columns: 240px 1fr;
+    grid-template-rows:
+      auto
+      300px
+      300px
+      240px
+      240px
+      160px;
+  }
+}
+
+
+/* =============================
+   Footer 區塊
+============================= */
+footer {
+    background-color: #F8F4F0;
+    padding: 3em 2em;
+    font-size: 0.95em;
+    color: #333;
+    letter-spacing: 2.4px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4em;
+  align-items: flex-start;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footerlogo img {
+  width: 200px;
+  display: block;
+}
+
+.footer-slogan {
+  color: #276E41;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0.5em 0 0 20px;
+  line-height: 1.6;
+  letter-spacing: 2.4px;
+}
+
+.footer-middle ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  line-height: 3;
+  font-size: 20px;
+
+
+}
+
+.footer-middle li {
+  margin-bottom: 0.5em;
+}
+
+.footer-middle h4,
+.footer-right h4 {
+  color: #000;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 3.84px;
+  margin-bottom: 1em;
+}
+
+.footer-right p {
+  line-height: 3.5;
+  font-size: 20px;
+  margin: 0;
+}
+
+.footer-middle a,
+.footer-right a {
+  color: #276E41;
+  text-decoration: none;
+}
+
+.footer-middle a:hover,
+.footer-right a:hover {
+  color: #ea8f6c;
+}

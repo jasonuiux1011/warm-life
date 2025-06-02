@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>關於「讓我來」</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- =====================================
+        (1) 固定 Logo（左上角，點擊返回首頁）
+        ===================================== -->
+    <div class="logo-fixed">
+        <a href="index.html">
+        <!-- 點擊 Logo 回到首頁 -->
+        <img src="pic/header-logo .png" alt="讓我來" />
+        </a>
+    </div>
+
+
+    <!-- =====================================
+        (2) 左側固定導引圖示（WARM LIFE）
+        ===================================== -->
+    <img
+        src="pic/WARM LIFE.png"
+        alt="WARM LIFE"
+        class="fixed-left-img"
+    />
+
+
+    <!-- =====================================
+        (3) 右側固定導引圖示（SCROLL）
+        ===================================== -->
+    <img
+        src="pic/SCROLL-.png"
+        alt="SCROLL"
+        class="fixed-right-img"
+    />
+
+
+    <!-- =====================================
+        (4) 頁首 Header & 導覽列
+        ===================================== -->
+    <header>
+        <div class="container">
+        <nav>
+            <ul class="main-menu">
+            <li><a href="services.html">陪伴服務總覽</a></li>
+            <li><a href="news-warmlife.html">長照新知快報</a></li>
+            <li><a href="About-warmlife.html">關於「讓我來」</a></li>
+            <li><a href="#ft">聯絡我們</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="btn-login">登入</a>
+        </div>
+    </header>
+
+
+    <!-- =====================================
+        (5) 登入彈窗 Modal
+        ===================================== -->
+    <main>
+        <div id="loginModal" class="modal hidden">
+        <div class="modal-content">
+            <!-- (5-1) 關閉按鈕 -->
+            <button class="modal-close" onclick="hideModal()">✕</button>
+
+            <!-- (5-2) 標題：登入 / 註冊 -->
+            <h2>登入 / 註冊</h2><br />
+
+            <!-- (5-3) 輸入欄位：帳號、密碼 -->
+            <input type="text" placeholder="帳號" />
+            <input type="password" placeholder="密碼" />
+
+            <!-- (5-4) 按鈕：登入 -->
+            <button class="btn-main">登入</button>
+
+            <!-- (5-5) 提示 & 註冊 -->
+            <p class="forget-text">還沒有帳號嗎？</p>
+            <button class="btn-sub">立即註冊</button>
+        </div>
+        </div>
+
+
+        <!-- =====================================
+            (6) Hero Banner（大圖 + 置中文字）
+            ===================================== -->
+        <section class="hero-banner">
+        <!-- (6-1) 背景大圖 -->
+        <img
+            src="pic/Aboutme-pic.png"
+            alt="關於我們"
+            class="hero-image"
+        />
+
+        <!-- (6-2) 白色置中區塊：文字介紹 -->
+        <div class="hero-text-box-about">
+            <p>
+            「我們相信，一份真誠的陪伴，可以讓生活多一點溫暖。」
+            這個平台的誕生，是因為我們曾看見許多長輩的嚮往，
+            也理解家屬們的壓力與需求。我們想搭起一座橋，
+            讓需要被陪伴的人，遇見願意付出溫柔的人。
+            </p>
+        </div>
+        </section>
+
+
+        <!-- =====================================
+            (7) 關於我們 About 區塊
+            ===================================== -->
+        <section class="about-section">
+
+        <!-- --------------------------------
+            (7-1) 第一列：左圖 + 右文字
+            -------------------------------- -->
+        <div class="about-row">
+            <!-- (7-1-a) 左側圖片 -->
+            <div class="about-image">
+            <img
+                src="pic/Aboutme-pic1.png"
+                alt="我們是誰 圖片"
+            />
+            </div>
+
+            <!-- (7-1-b) 右側文字：標題 & 段落 -->
+            <div class="about-text">
+            <h3 class="about-title">我們是誰</h3>
+            <p class="about-paragraph">
+                這個平台由一群關心高齡社會的社工、<br />
+                照服專業者組成，我們看過太多需要，<br />
+                但也相信「陪伴」其實可以很簡單。<br />
+                有人陪你去看醫生、有人願意聽你說話，<br />
+                這些日常，就是照顧的開始。
+            </p>
+            </div>
+        </div>
+
+
+        <!-- --------------------------------
+            (7-2) 第二列：左文字 + 右圖
+            -------------------------------- -->
+        <div class="about-row row-reverse">
+            <!-- (7-2-a) 左側圖片 -->
+            <div class="about-image">
+            <img
+                src="pic/Aboutme-pic2.png"
+                alt="我們希望打造的是 圖片"
+            />
+            </div>
+
+            <!-- (7-2-b) 右側文字：標題 & 段落 -->
+            <div class="about-text">
+            <h3 class="about-title">我們希望打造的是…</h3>
+            <p class="about-paragraph">
+                一個溫柔可靠的媒合平台<br />
+                一個讓「陪伴」成為日常的小社群<br />
+                一個讓長輩、家屬、陪伴者都能安心互動的空間<br />
+            </p>
+            </div>
+        </div>
+
+        </section>
+
+
+        <!-- =====================================
+            (8) 三步驟 Process 區塊
+            ===================================== -->
+        <section class="process-section">
+        <!-- (8-1) 區塊標題 -->
+        <h2 class="process-title">該如何使用「讓我來」呢？</h2>
+
+        <!-- (8-2) 流程示意圖 -->
+        <div class="process-graphic-wrapper">
+            <img
+            src="pic/process-graphic.png"
+            alt="STEP 01 → STEP 02 → STEP 03"
+            class="process-graphic"
+            />
+        </div>
+
+        <!-- (8-3) 流程文字說明（3 個步驟） -->
+        <div class="process-text-wrapper-flex">
+            <div class="process-step">
+            <h3 class="step-heading">查看服務內容</h3>
+            </div>
+            <div class="process-step">
+            <h3 class="step-heading">登入並填寫需求</h3>
+            </div>
+            <div class="process-step">
+            <h3 class="step-heading">等待配對與聯繫</h3>
+            </div>
+        </div>
+        </section>
+
+
+        <!-- =====================================
+            (9) 吼蛙專區 Frog Section
+            ===================================== -->
+        <section class="frog-section">
+        <div class="frog-row">
+            <!-- (9-1) 左側：吼蛙圖片 -->
+            <div class="frog-image-wrapper">
+            <img
+                class="frog-image-main"
+                src="pic/吼蛙登場.png"
+                alt="吼蛙登場"
+            />
+            </div>
+
+            <!-- (9-2) 右側：吼蛙文案 -->
+            <div class="frog-text-wrapper">
+            <h2 class="frog-title">吼蛙登場――讓溫暖從這裡開始</h2>
+            <p class="frog-paragraph">
+                我們要隆重介紹陪伴平台的「小主角」――吼蛙。<br />
+                牠的名字取自台語「讓我來」，象徵著每當長輩們遇到需要幫助或想要聊天的時刻，<br />
+                從他誕生的那一刻，吼蛙就與我們一起，肩負「為長輩找回笑容、感受溫暖」的使命。<br />
+                當你在平台上提出陪伴需求，無論是想要有人陪你散步、聊天，還是需要手把手學習新科技，<br />
+                只要吼蛙在螢幕角落揮手，它就代表著：我在這裡，準備好為你服務。牠不只是吉祥物，<br />
+                更是我們對每一次溫暖陪伴承諾的化身，提醒我們，在「讓我來」，沒有人是孤單的。<br />
+                歡迎你和吼蛙一起展開這段溫馨旅程，讓我們攜手，將陪伴的力量延伸到每一個角落。
+            </p>
+            </div>
+        </div>
+        </section>
+
+
+        <!-- =====================================
+            (10) CTA 區塊：左右兩張卡片
+            ===================================== -->
+        <section class="cta-section">
+        <div class="cta-wrap">
+            <!-- (10-1) 左側卡片：我需要陪伴 -->
+            <div class="cta-card cta-left">
+            <div class="cta-icon">
+                <img src="pic/Vector.png" alt="我需要陪伴 Icon" />
+            </div>
+            <h3 class="cta-title">我需要陪伴</h3>
+            <a href="Form-Section.html">
+            <button class="cta-button cta-button-left">立即配對</button>
+            </div></a>
+
+            <!-- (10-2) 右側卡片：我想提供陪伴 -->
+            <div class="cta-card cta-right">
+            <div class="cta-icon">
+                <img src="pic/Vector-1.png" alt="我想提供陪伴 Icon" />
+            </div>
+            <h3 class="cta-title">我想提供陪伴</h3>
+            <button class="cta-button cta-button-right">馬上陪伴</button>
+            </div>
+        </div>
+        </section>
+
+
+        <!-- =====================================
+            (11) 聯絡專區 Frog Section（再次使用 frog-section）
+            ===================================== -->
+        <section class="frog-section">
+        <div class="frog-row">
+            <!-- (11-1) 左側：吼蛙圖片 -->
+            <div class="frog-image-wrapper">
+            <img
+                class="frog-image-main"
+                src="pic/吼蛙登場.png"
+                alt="吼蛙登場"
+            />
+            </div>
+
+            <!-- (11-2) 右側：聯絡文案 -->
+            <div class="frog-text-wrapper">
+            <p class="frog-paragraph">
+                還有任何問題嗎？<br /><br />
+                現在就馬上打電話來詢問，我們會為您一一做說明<br /><br />
+                客服電話：03-456-7777 <a href="#">(立即撥打)</a><br /><br />
+                給我們一次陪伴的機會吧～
+            </p>
+            </div>
+        </div>
+        </section>
+
+    </main>
+
+
+    <!-- =====================================
+        (12) Footer 區塊
+        ===================================== -->
+    <footer id="ft">
+        <div class="footer-container">
+        <!-- (12-1) Footer 左側：Logo + Slogan -->
+        <div class="footer-left">
+            <a href="index.html">
+            <div class="footerlogo">
+                <img src="pic/logo.png" alt="讓我來 Logo" />
+            </div>
+            </a>
+            <div class="footer-slogan">
+            貼心相伴，<br />
+            讓安心成為常在。
+            </div>
+        </div>
+
+        <!-- (12-2) Footer 中間：快速導覽 -->
+        <div class="footer-middle">
+            <h4>快速導覽</h4>
+            <ul>
+            <li><a href="About-warmlife.html">關於「讓我來」</a></li>
+            <li><a href="services.html">陪伴服務總覽</a></li>
+            <li><a href="news-warmlife.html">長照新知快報</a></li>
+            <li><a href="index.html#htu">使用流程</a></li>
+            </ul>
+        </div>
+
+        <!-- (12-3) Footer 右側：聯絡資訊 -->
+        <div class="footer-right">
+            <h4>聯絡資訊</h4>
+            <p>
+            客服專線: 03-456-7777<br />
+            公司地址: 320桃園市中壢區復興路46號9樓<br />
+            客服信箱: warmlife@tibame.com<br />
+            服務時間（週一至週五 09:00-18:00）
+            </p>
+        </div>
+        </div>
+    </footer>
+
+    </body>
+    </html>

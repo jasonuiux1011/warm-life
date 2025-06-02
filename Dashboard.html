@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>讓我來｜我的陪伴行程</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- =====================================
+        (1) 固定 Logo（左上角，點擊返回首頁）
+        ===================================== -->
+    <div class="logo-fixed">
+      <a href="index.html">
+        <!-- 點擊 Logo 回到首頁 -->
+        <img src="pic/header-logo .png" alt="讓我來" />
+      </a>
+    </div>
+
+
+    <!-- =====================================
+        (2) 左側固定導引圖示（WARM LIFE）
+        ===================================== -->
+    <img
+      src="pic/WARM LIFE.png"
+      alt="WARM LIFE"
+      class="fixed-left-img"
+    />
+
+
+    <!-- =====================================
+        (3) 右側固定導引圖示（SCROLL）
+        ===================================== -->
+    <img
+      src="pic/SCROLL-.png"
+      alt="SCROLL"
+      class="fixed-right-img"
+    />
+
+
+    <!-- =====================================
+        (4) 頁首 Header & 導覽列
+        ===================================== -->
+    <header>
+      <div class="container">
+        <nav>
+          <ul class="main-menu">
+            <li><a href="services.html">陪伴服務總覽</a></li>
+            <li><a href="news-warmlife.html">長照新知快報</a></li>
+            <li><a href="About-warmlife.html">關於「讓我來」</a></li>
+            <li><a href="#ft">聯絡我們</a></li>
+          </ul>
+        </nav>
+        <a href="#" class="btn-login">登入</a>
+      </div>
+    </header>
+
+
+    <!-- =====================================
+        (5) 登入彈窗 Modal
+        ===================================== -->
+    <main>
+      <div id="loginModal" class="modal hidden">
+        <div class="modal-content">
+          <!-- (5-1) 關閉按鈕 -->
+          <button class="modal-close" onclick="hideModal()">✕</button>
+
+          <!-- (5-2) 標題：登入 / 註冊 -->
+          <h2>登入 / 註冊</h2><br />
+
+          <!-- (5-3) 輸入欄位：帳號、密碼 -->
+          <input type="text" placeholder="帳號" />
+          <input type="password" placeholder="密碼" />
+
+          <!-- (5-4) 按鈕：登入 -->
+          <button class="btn-main">登入</button>
+
+          <!-- (5-5) 註冊提示 -->
+          <p class="forget-text">還沒有帳號嗎？</p>
+          <button class="btn-sub">立即註冊</button>
+        </div>
+      </div>
+
+
+      <!-- =====================================
+          (6) Dashboard 主白卡與 Grid
+          ===================================== -->
+      <div class="dashboard-card">
+
+        <!-- --------------------------------
+            (6-1) Grid 排版容器
+            -------------------------------- -->
+        <div class="dashboard-grid">
+
+          <!-- --------------------------------
+              (A) 左側：Sidebar （大頭照 + 功能列）
+              -------------------------------- -->
+          <aside class="sidebar">
+            <!-- (A-1) 大頭照 -->
+            <div class="avatar-wrapper">
+              <img
+                src="pic/main person1.png"
+                alt="使用者大頭照"
+                class="avatar-img"
+              />
+            </div>
+
+            <!-- (A-2) 功能列按鈕 -->
+            <nav class="sidebar-nav">
+              <button class="nav-btn">HOME</button>
+              <button class="nav-btn">今日行程</button>
+              <button class="nav-btn">新增預約</button>
+              <button class="nav-btn">提醒事項</button>
+              <button class="nav-btn">我的回憶</button>
+            </nav>
+          </aside>
+
+
+          <!-- --------------------------------
+              (B) 上方區塊：歡迎問候
+              -------------------------------- -->
+          <header class="greeting">
+            <!-- (B-1) 青蛙小手圖示 -->
+            <img
+              src="pic/logohand.png"
+              alt="青蛙小手圖示"
+              class="greeting-icon"
+            />
+
+            <!-- (B-2) 歡迎文字 -->
+            <p class="greeting-text">
+              您好，李奶奶，<br />
+              今天有 <span class="highlight">3</span> 場陪伴行程，祝您度過美好一天！
+            </p>
+
+            <!-- (B-3) 關閉按鈕 -->
+            <button class="header-close" aria-label="關閉介面">×</button>
+          </header>
+
+
+          <!-- --------------------------------
+              (C) 主要區塊1：今日行程清單
+              -------------------------------- -->
+          <section class="today-schedule">
+            <!-- (C-1) 區塊標題 -->
+            <h2 class="section-title-e">今日行程</h2>
+
+            <!-- (C-2) 行程列表 -->
+            <ul class="schedule-list">
+              <!-- (C-2-1) 行程項目1 -->
+              <li class="schedule-item">
+                <img
+                  src="pic/Serve2.png"
+                  alt="聊天圖示"
+                  class="schedule-icon"
+                />
+                <div class="schedule-info">
+                  <span class="schedule-type">聊天 :（李小白）</span>
+                  <span class="schedule-time">14:30</span>
+                </div>
+                <button class="call-btn">一鍵通話</button>
+              </li>
+
+              <!-- (C-2-2) 行程項目2 -->
+              <li class="schedule-item">
+                <img
+                  src="pic/Serve4.png"
+                  alt="教學圖示"
+                  class="schedule-icon"
+                />
+                <div class="schedule-info">
+                  <span class="schedule-type">教學 :（陳阿杰）</span>
+                  <span class="schedule-time">16:30</span>
+                </div>
+                <button class="call-btn">一鍵通話</button>
+              </li>
+
+              <!-- (C-2-3) 行程項目3 -->
+              <li class="schedule-item">
+                <img
+                  src="pic/Serve2.png"
+                  alt="聊天圖示"
+                  class="schedule-icon"
+                />
+                <div class="schedule-info">
+                  <span class="schedule-type">聊天 :（陳阿杰）</span>
+                  <span class="schedule-time">19:00</span>
+                </div>
+                <button class="call-btn">一鍵通話</button>
+              </li>
+            </ul>
+          </section>
+
+
+          <!-- --------------------------------
+              (D) 主要區塊2：月曆
+              -------------------------------- -->
+          <aside class="calendar-box">
+            <!-- (D-1) 月曆標頭：月份 + 年份 -->
+            <div class="calendar-header">
+              <span class="calendar-month">May</span>
+              <span class="calendar-year">2025</span>
+            </div>
+
+            <!-- (D-2) 月曆表格 -->
+            <table class="calendar-table">
+              <thead>
+                <tr>
+                  <th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="disabled"></td><td></td><td></td><td></td><td>1</td><td>2</td><td>3</td>
+                </tr>
+                <tr>
+                  <td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td>
+                </tr>
+                <tr>
+                  <td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td>
+                </tr>
+                <tr>
+                  <td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td>
+                </tr>
+                <tr>
+                  <td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td>
+                </tr>
+              </tbody>
+            </table>
+          </aside>
+
+
+          <!-- --------------------------------
+              (E) 次要區塊1：陪伴就診 小卡片
+              -------------------------------- -->
+          <section class="card-visit-e">
+            <!-- (E-1) 小卡片標題 -->
+            <h3 class="card-title-e">陪伴就診</h3>
+
+            <!-- (E-2) 小卡片內容 -->
+            <div class="card-content-e">
+              <span class="card-date-e">05月30日</span>
+              <span class="card-time-e">09:00</span>
+              <p class="card-client-e">需求者：李奶奶</p>
+              <div class="card-actions-e">
+                <button class="card-btn-e detail-btn-e">詳情</button>
+                <button class="card-btn-e edit-btn-e">編輯</button>
+                <button class="card-btn-e postpone-btn-e">延後</button>
+              </div>
+            </div>
+          </section>
+
+
+          <!-- --------------------------------
+              (F) 次要區塊2：陪伴聊天 小卡片
+              -------------------------------- -->
+          <section class="card-chat-f">
+            <!-- (F-1) 小卡片標題 -->
+            <h3 class="card-title-e">陪伴聊天</h3>
+
+            <!-- (F-2) 小卡片內容 -->
+            <div class="card-content-e">
+              <span class="card-date-e">05月31日</span>
+              <span class="card-time-e">18:00</span>
+              <p class="card-client-e">需求者：李奶奶</p>
+              <div class="card-actions-e">
+                <button class="card-btn-e detail-btn-e">詳情</button>
+                <button class="card-btn-e edit-btn-e">編輯</button>
+                <button class="card-btn-e postpone-btn-e">延後</button>
+              </div>
+            </div>
+          </section>
+
+
+          <!-- --------------------------------
+              (G) 次要區塊3：小行程列表
+              -------------------------------- -->
+          <aside class="mini-schedule">
+            <!-- (G-1) 列表 -->
+            <ul class="mini-list">
+              <li>
+                <span class="mini-dot green"></span>
+                提醒事項：早餐飯後記得食用您的藥物~
+              </li>
+              <li>
+                <span class="mini-dot orange"></span>
+                提醒事項：李小白已新增與您的回憶錄
+              </li>
+            </ul>
+          </aside>
+
+        </div>
+        <!-- /div.dashboard-grid -->
+
+      </div>
+      <!-- /div.dashboard-card -->
+
+    </main>
+
+
+    <!-- =====================================
+        (8) Footer 區塊
+        ===================================== -->
+    <footer id="ft">
+      <div class="footer-container">
+        <!-- (8-1) Footer 左側：Logo + Slogan -->
+        <div class="footer-left">
+          <a href="index.html">
+            <div class="footerlogo">
+              <img src="pic/logo.png" alt="讓我來 Logo" />
+            </div>
+          </a>
+          <div class="footer-slogan">
+            貼心相伴，<br />
+            讓安心成為常在。
+          </div>
+        </div>
+
+        <!-- (8-2) Footer 中間：快速導覽 -->
+        <div class="footer-middle">
+          <h4>快速導覽</h4>
+          <ul>
+            <li><a href="About-warmlife.html">關於「讓我來」</a></li>
+            <li><a href="services.html">陪伴服務總覽</a></li>
+            <li><a href="news-warmlife.html">長照新知快報</a></li>
+            <li><a href="index.html#htu">使用流程</a></li>
+          </ul>
+        </div>
+
+        <!-- (8-3) Footer 右側：聯絡資訊 -->
+        <div class="footer-right">
+          <h4>聯絡資訊</h4>
+          <p>
+            客服專線: 03-456-7777<br />
+            公司地址: 320桃園市中壢區復興路46號9樓<br />
+            客服信箱: warmlife@tibame.com<br />
+            服務時間（週一至週五 09:00-18:00）
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+  </html>
+
+
+
+
+
+
+
+

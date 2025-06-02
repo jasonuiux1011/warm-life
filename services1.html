@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>讓我來｜陪伴門診服務</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- =====================================
+        (1) 固定左側導引圖示（WARM LIFE）
+        ===================================== -->
+    <img
+        src="pic/WARM LIFE.png"
+        alt="WARM LIFE"
+        class="fixed-left-img"
+    />
+
+    <!-- =====================================
+        (2) 固定右側導引圖示（SCROLL）
+        ===================================== -->
+    <img
+        src="pic/SCROLL-.png"
+        alt="SCROLL"
+        class="fixed-right-img"
+    />
+
+
+
+    <main>
+        <!-- =====================================
+            (3) Detail Popup Wrapper（全屏遮罩 + 中央白色卡片）
+            ===================================== -->
+        <section class="detail-popup-wrapper">
+        
+        <!-- ------------------------------------
+            (3-1) 白色卡片容器（detail-popup）
+            ------------------------------------ -->
+        <div class="detail-popup">
+            
+            <!-- --------------------------------
+                (3-1a) 左側圖片區塊（popup-image）
+                -------------------------------- -->
+            <div class="popup-image">
+            <img
+                src="pic/陪伴門診B.png"
+                alt="陪伴門診 圖片"
+            />
+            </div>
+            <!-- /div.popup-image -->
+
+
+            <!-- --------------------------------
+                (3-1b) 右側文字區 + 關閉按鈕（popup-content）
+                -------------------------------- -->
+            <div class="popup-content">
+            
+            <!-- (3-1b-i) 關閉按鈕（點擊返回 services.html） -->
+            <a href="services.html" class="popup-close-link">
+                <button class="popup-close">×</button>
+            </a>
+
+            <!-- (3-1b-ii) 標題：服務名稱 -->
+            <h3 class="popup-title">陪伴門診</h3>
+
+            <!-- (3-1b-iii) 文字內容說明 -->
+            <p class="popup-text">
+                在「陪伴門診」服務中，我們從家中出發便以專業的關懷與貼心的協助開啟，陪伴師事先協助您準備所需隨身物品及備忘，協助安全上下車並在車內以輕柔音樂與溫暖話語舒緩情緒；抵達診所後，我們陪您領號候診、領取號碼牌，耐心等候並主動提供陪水、紀錄醫囑、協助您與醫護人員溝通，確保資訊無誤；診療結束後，我們貼心整理後續醫囑與轉介，並且再度與您安全搭乘專車、並在家中照顧您跋(拆)點安全；同到家中後，也會向家屬匯回報診日重點，讓整個陪診過程成為一段溫暖安心、充滿信任的相伴旅程。
+            </p>
+            </div>
+            <!-- /div.popup-content -->
+
+        </div>
+        <!-- /div.detail-popup -->
+
+        </section>
+        <!-- /section.detail-popup-wrapper -->
+    </main>
+    </body>
+    </html>
