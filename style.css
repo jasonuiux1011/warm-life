@@ -1304,7 +1304,7 @@ header .container {
   box-sizing: border-box;
   width: 100%;
   max-width: 1200px;             /* 可以按需改成 1400px 或刪除 */
-  position: relative;            /* 讓關閉按鈕可絕對定位 */
+  position: relative;            讓關閉按鈕可絕對定位
 }
 
 /* 3. recommend-header：標題與關閉按鈕同列 */
@@ -1326,31 +1326,7 @@ header .container {
   margin-bottom: 20px;
 }
 
-/* 關閉按鈕 (右上角 X) */
-.recommend-close {
-  position: absolute;
-  right: 0;
-  top: -10px; /* 調整位置讓它靠近標題 */
-  background: none;
-  border: none;
-  font-size: 60px;
-  line-height: 1;
-  color: #444;
-  cursor: pointer;
-  padding: 8px;
-  transition: color 0.2s;
-}
-.recommend-close:hover {
-  color: #ea8f6c; /* 懸停時改成珊瑚色 */
-}
 
-/* 4. recommend-grid：小卡片網格 */
-.recommend-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 50px;                    /* 卡片間距 */
-  width: 100%;
-}
 
 /* 5. recommend-card：單張小卡片 */
 .recommend-card {
@@ -1628,10 +1604,10 @@ header .container {
 .recommend-close {
   position: absolute;
   right: 0;
-  top: 0;
+  top: -10px; /* 調整位置讓它靠近標題 */
   background: none;
   border: none;
-  font-size: 24px;
+  font-size: 80px;
   line-height: 1;
   color: #444;
   cursor: pointer;
