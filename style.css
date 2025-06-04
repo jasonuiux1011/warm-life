@@ -1279,42 +1279,8 @@ header .container {
 }
 
 /* ===============================================
-   推薦陪伴者頁面 CSS（全新 recommend-… class）
+  推薦陪伴者頁面 CSS（全新 recommend-… class）
 =============================================== */
-
-/* 1. recommend-section：最外層，用來水平置中大卡片 */
-.recommend-section {
-  display: flex;
-  justify-content: center;     /* 大卡片水平置中 */
-  padding: 40px 50px;          /* 外層左右內距 */
-  background-color: #F8F4F0;    /* 可依設計調整或移除 */
-  box-sizing: border-box;
-  width: 100%;
-  margin-top: 60px;     
-    box-shadow: 0 10px 10px rgba(252, 180, 161, 0.2);
-}
-
-/* 2. recommend-container：大白卡外觀 */
-.recommend-container {
-  background-color: #ffffff;
-  border: 1px solid #e8c4b5;     /* 淺珊瑚色邊框 */
-  border-radius: 20px;           /* 四角圓弧 */
-  box-shadow: 0 10px 10px rgba(252, 180, 161, 0.2);
-  padding: 40px 50px;            /* 卡片上下左右內距 */
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 1200px;             /* 可以按需改成 1400px 或刪除 */
-  position: relative;            讓關閉按鈕可絕對定位
-}
-
-/* 3. recommend-header：標題與關閉按鈕同列 */
-.recommend-header {
-  display: flex;
-  justify-content: center;       /* 標題水平置中 */
-  align-items: center;
-  position: relative;
-  margin-bottom: 30px;
-}
 
 /* 標題文字 */
 .recommend-title {
@@ -1577,6 +1543,7 @@ header .container {
   background-color: #F8F4F0;
   box-sizing: border-box;
   width: 100%;
+  box-shadow: 0 10px 10px rgba(252, 180, 161, 0.2);
 }
 
 .recommend-container {
