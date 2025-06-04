@@ -44,13 +44,22 @@ main {
   opacity: 1;
 }
 
-.left, .right {
-  flex: 1;
+.left {
+  flex: 0.8;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100%;
+}
+.right {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding-left: 40px;
 }
 
 .logo {
@@ -79,6 +88,7 @@ main {
   font-size: 64px;
   font-weight: 700;
   letter-spacing: 6.4px;
+  
 }
 
 .slogan {
