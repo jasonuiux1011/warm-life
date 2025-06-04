@@ -382,7 +382,7 @@ header .container {
 .section-title {
   font-size: 64px;
   color: #000;
-  margin: 100px 0px 40px;
+  margin: 100px 0px 100px;
   letter-spacing: 5px;
 }
 
@@ -1269,7 +1269,8 @@ header .container {
   background-color: #ea8f6c;   /* 珊瑚色按鈕 */
   color: #ffffff;
   border: none;
-  border-radius: 20px;
+  width: 300px;
+  border-radius: 40px;
   cursor: pointer;
   transition: background-color 0.2s, transform 0.2s;
 }
@@ -1279,96 +1280,6 @@ header .container {
   transform: translateY(-2px);
 }
 
-/* ===============================================
-  推薦陪伴者頁面 CSS（全新 recommend-… class）
-=============================================== */
-
-/* 標題文字 */
-.recommend-title {
-  font-size: 36px;
-  font-weight: bold;
-  color: #276E41;                /* 深綠色 */
-  letter-spacing: 5px;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-
-
-/* 5. recommend-card：單張小卡片 */
-.recommend-card {
-  background-color: #ffffff;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  box-shadow: 0 4px 16px rgba(226, 125, 96, 0.2);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 16px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.recommend-card:hover {
-  transform: translateY(-4px); /* 輕微浮起 */
-  box-shadow: 0 8px 24px rgba(226, 125, 96, 0.3);
-}
-
-/* 小卡片頂部圖片 */
-.recommend-card-img {
-  width: 100%;
-  height: 250px;               /* 固定高度，依設計可調整 */
-  object-fit: cover;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-}
-
-/* 名字 */
-.recommend-card-name {
-  font-size:24px;
-  font-weight: bold;
-  color: #276E41;
-  margin: 12px 0 8px 0;
-  text-align: center;
-  padding: 0 12px;             /* 兩側留白，免得文字貼邊 */
-}
-
-/* 簡介描述 */
-.recommend-card-desc {
-  font-size: 20px;
-  color: #444;
-  text-align: left;
-  margin: 0 0 12px 0;
-  padding: 0 12px;             /* 兩側留白 */
-  line-height: 1.4;
-}
-
-/* 價格與可陪時間 */
-.recommend-card-info {
-  font-size: 16px;
-  color: #444;
-  text-align: left;
-  margin: 0 0 16px 0;
-  padding: 0 12px;             /* 兩側留白 */
-  line-height: 1.5;
-}
-/* 安排時間按鈕 */
-.recommend-btn {
-  font-size: 16px;
-  color: #ea8f6c;             /* 珊瑚色文字 */
-  background-color: #ffffff;  /* 白底 */
-  border: 1px solid #ea8f6c;  /* 珊瑚色邊框 */
-  border-radius: 20px;
-  padding: 8px 16px;
-  cursor: pointer;
-  transition: background-color 0.2s, color 0.2s;
-  margin-top: auto;           /* 把按鈕推到底部 */
-}
-
-.recommend-btn:hover {
-  background-color: #ea8f6c;  /* 懸停時變珊瑚底 */
-  color: #ffffff;
-}
 
 /* ===========================================
    0. Modal 初始隱藏（非常重要！）
@@ -1521,7 +1432,7 @@ header .container {
   font-size: 20px;
   padding: 12px;
   border: none;
-  border-radius: 24px;
+  border-radius: 40px;
   cursor: pointer;
   transition: background-color 0.2s, transform 0.2s;
   margin: 0 auto;
@@ -1535,8 +1446,19 @@ header .container {
 }
 
 /* -------------------------------------------
-   3. 推薦陪伴者大卡片以及小卡片 
+  3. 推薦陪伴者大卡片以及小卡片 
 -------------------------------------------- */
+/* 標題文字 */
+.recommend-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #276E41;                /* 深綠色 */
+  letter-spacing: 5px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
 .recommend-section {
   display: flex;
   justify-content: center;
@@ -1651,7 +1573,7 @@ header .container {
   color: #ea8f6c;
   background-color: #ffffff;
   border: 1px solid #ea8f6c;
-  border-radius: 20px;
+  border-radius: 40px;
   padding: 8px 16px;
   cursor: pointer;
   transition: background-color 0.2s, color 0.2s;
