@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>讓我來｜Warm-Life</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleR.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -12,31 +14,10 @@
     <!-- =====================================
         (1) 固定 Logo（左上角）
         ===================================== -->
-    <div class="logo-fixed">
+    <!-- <div class="logo-fixed">
         <img src="./pic/header-logo.png" alt="讓我來" />
     </div>
-
-
-
-    <!-- =====================================
-        (2) 左側固定導引圖示（WARM LIFE）
-        ===================================== -->
-    <img
-        src="./pic/WARMLIFE.png"
-        alt="WARM LIFE"
-        class="fixed-left-img"
-    />
-
-
-
-    <!-- =====================================
-        (3) 右側固定導引圖示（SCROLL）
-        ===================================== -->
-    <img
-        src="./pic/SCROLL.png"
-        alt="SCROLL"
-        class="fixed-right-img"
-    />
+ -->
 
 
 
@@ -45,6 +26,11 @@
         ===================================== -->
     <header>
         <div class="container">
+               <div class="logo-fixed">
+        <img src="./pic/header-logo.png" alt="讓我來" />
+    </div>
+
+
         <nav>
             <ul class="main-menu">
             <li><a href="services.html">陪伴服務總覽</a></li>
@@ -88,25 +74,26 @@
 
 
 
-        <!-- =====================================
-            (6) Hero Banner 英雄區（大圖 + 文字按鈕）
-            ===================================== -->
+    <!-- =====================================
+    (6) Hero Banner 英雄區（大圖 + 文字按鈕 + 左右裝飾圖）
+===================================== -->
         <section class="hero-banner">
-        <!-- 大背景圖片 -->
-        <img
-            src="./pic/Home page picture.png"
-            alt="關懷長者"
-            class="hero-image"
-        />
+        <!-- 左右裝飾圖 -->
+        <div class="hero-icons-row">
+            <img src="./pic/WARMLIFE.png" alt="WARM LIFE" class="fixed-left-img" />
+            <img src="./pic/SCROLL.png" alt="SCROLL" class="fixed-right-img" />
+        </div>
 
-        <!-- 白色置中區塊：標題 + 副標 + 按鈕 -->
+        <!-- 英雄主視覺圖 -->
+        <img src="./pic/Home page picture.png" alt="關懷長者" class="hero-image" />
+
+        <!-- 英雄文字區塊 -->
         <div class="hero-text-box">
             <h1>讓關懷走得更遠</h1>
             <p>我來為您服務</p>
             <a href="Form-Section.html" class="btn-main">立即配對</a>
         </div>
         </section>
-
 
 
         <!-- =====================================
@@ -169,14 +156,7 @@
             (8) 使用者見證 Testimonial 區塊
             ===================================== -->
         <section class="testimonial-section">
-        <!-- 背景波浪圖片 -->
-        <img src="./pic/wave.png" alt="背景波浪" class="bg-wave" />
-
-        <!-- 裝飾圖示：吼蛙、腳印、荷葉 -->
-        <img src="./pic/fang.png" alt="吼蛙" class="frog-icon" />
-        <img src="./pic/foot.png" alt="腳印" class="foot-icon" />
-        <img src="./pic/leaf.png" alt="荷葉" class="leaf-icon" />
-
+        <div class="testimonial-foot-icon"></div>
         <!-- 內容本體：大頭照 + 氣泡文字 -->
         <div class="testimonial-container">
             <!-- 大頭照人物資訊 -->
