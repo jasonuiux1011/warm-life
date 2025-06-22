@@ -2584,8 +2584,8 @@ display: flex;
     }
 
     .ai-icon {
-        width: 120px; /* 手機版縮小圖標 */
-        height: 120px;
+        width: 110px; /* 手機版縮小圖標 */
+        height: 110px;
     }
 }
 }
