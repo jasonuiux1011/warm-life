@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>讓我來｜Warm-Life</title>
     <link rel="stylesheet" href="styleR.css">
+    <link rel="stylesheet" href="styleRWD.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
 
     <script src="script.js" defer></script>
@@ -18,28 +19,56 @@
         <img src="./pic/header-logo.png" alt="讓我來" />
     </div>
  -->
+<div class="ai-customer-service">
+        <img src="./pic/AI1.png" alt="AI 客服" class="ai-icon" />
+    </div>
+<!-- 客服對話框燈箱 -->
+<div id="chatModal" class="chat-modal hidden">
+    <div class="chat-modal-content">
+        <!-- 關閉按鈕 -->
+        <button class="chat-close" onclick="closeChatModal()">✕</button>
+
+        <!-- 對話框標題 -->
+        <h2 class="chat-title">吼蛙 AI 客服</h2>
+
+        <!-- 對話區域 -->
+        <div class="chat-messages">
+            <div class="message bot">您好！我是您的 AI 客服，請問有什麼我可以幫您的？</div>
+            <div class="message user">我想問一下服務流程。</div>
+            <div class="message bot">好的！請點擊「立即配對」開始，或告訴我具體問題。</div>
+        </div>
 
 
+        
+        <!-- 輸入區域 -->
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="輸入您的訊息..." />
+            <button onclick="sendChatMessage()">送出</button>
+        </div>
+
+        
+
+    </div>
+</div>
 
     <!-- =====================================
         (4) 頁首 Header & 導覽列
         ===================================== -->
     <header>
         <div class="container">
-               <div class="logo-fixed">
-        <img src="./pic/header-logo.png" alt="讓我來" />
-    </div>
-
-
-        <nav>
-            <ul class="main-menu">
-            <li><a href="services.html">陪伴服務總覽</a></li>
-            <li><a href="news-warmlife.html">長照新知快報</a></li>
-            <li><a href="About-warmlife.html">關於「讓我來」</a></li>
-            <li><a href="#ft">聯絡我們</a></li>
-            </ul>
-        </nav>
-        <a href="#" class="btn-login">登入</a>
+                <div class="logo-fixed">
+            <img src="./pic/header-logo.png" alt="讓我來" />
+                </div>
+                   
+            <nav>
+                <ul class="main-menu">
+                <li><a href="services.html">陪伴服務總覽</a></li>
+                <li><a href="news-warmlife.html">長照新知快報</a></li>
+                <li><a href="About-warmlife.html">關於「讓我來」</a></li>
+                <li><a href="#ft">聯絡我們</a></li>
+                </ul>
+            </nav>
+                <button class="btn-login">登入</button>        
         </div>
     </header>
 
@@ -50,7 +79,7 @@
         ===================================== -->
     <main>
         <div id="loginModal" class="modal hidden">
-        <div class="modal-content">
+        <div class="modal-content ">
             <!-- 關閉按鈕 -->
             <button class="modal-close" onclick="hideModal()">✕</button>
 
@@ -58,8 +87,8 @@
             <h2>登入 / 註冊</h2><br />
 
             <!-- 帳號、密碼欄位 -->
-            <input type="text" placeholder="帳號" />
-            <input type="password" placeholder="密碼" />
+            <input type="text" class="login-input" placeholder="帳號" />
+            <input type="password" class="login-input" placeholder="密碼" />
 
             <!-- 登入按鈕，登入後跳到填寫表單頁面 -->
             <a href="Form-Section.html">
@@ -106,7 +135,7 @@
         <!-- 三張卡片：左小卡、中央大卡、右小卡 -->
         <div class="feature-row">
             <!-- 左側小卡（blur、opacity 較低） -->
-            <div class="feature-card small">
+            <div class="feature-card main">
             <h3 class="feature-title">陪伴門診</h3>
             <img
                 src="./pic/Service Features3.png"
@@ -116,6 +145,10 @@
             <p class="feature-desc">
                 你不再是一個人提著健保卡在醫院裡面奔波，像孫子陪阿公一樣，我們陪你一起排隊、聽診、拿藥。重要的事，一起記在心上。
             </p>
+            <div class="feature-card-controls">
+                <button class="feature-prev">＜</button>
+                <button class="feature-next">＞</button>
+            </div>
             </div>
 
             <!-- 中間主卡（hover 時稍微放大） -->
@@ -127,7 +160,7 @@
                 class="feature-pic"
             />
             <p class="feature-desc">
-                有人每天來坐坐，聽你聊年輕時風光的故事、孩子小時候的糗事，就像家裡有人陪著說話一樣。這些話，請說給我聽。
+                有人每天來坐坐，聽你聊年輕時風光的故事、孩子小時候的糗事，就像家裡有人陪著說話一樣。我想傾聽屬於你特別的故事。
             </p>
             <div class="feature-card-controls">
                 <button class="feature-prev">＜</button>
@@ -136,7 +169,7 @@
             </div>
 
             <!-- 右側小卡 -->
-            <div class="feature-card small">
+            <div class="feature-card main">
             <h3 class="feature-title">居家照護</h3>
             <img
                 src="./pic/Service Features2.png"
@@ -146,7 +179,69 @@
             <p class="feature-desc">
                 像是兒子、女兒在家一樣，有人幫你打掃、準備三餐，連電鍋怎麼操作都記得問你喜不喜歡吃。你過得好，我們就才能放心。
             </p>
+            <div class="feature-card-controls">
+                <button class="feature-prev">＜</button>
+                <button class="feature-next">＞</button>
             </div>
+            </div>
+
+            <div class="feature-card main">
+            <h3 class="feature-title">喘息服務</h3>
+            <img
+                src="./pic/Service Features4.png"
+                alt="喘息服務"
+                class="feature-pic"
+            />
+            <p class="feature-desc">
+                有時家人照顧久了，也需要休息一下。我們就像家裡的親戚，幫你照顧長輩一段時間，讓你安心處理自己的事，
+                回來的時候，一切都好好的。
+            </p>
+            <div class="feature-card-controls">
+                <button class="feature-prev">＜</button>
+                <button class="feature-next">＞</button>
+            </div>
+            </div>
+
+            <div class="feature-card main">
+            <h3 class="feature-title">陪伴買菜</h3>
+            <img
+                src="./pic/Service Features5.png"
+                alt="陪伴買菜"
+                class="feature-pic"
+            />
+            <p class="feature-desc">
+                有人陪你一起逛市場或超市，
+                挑選最新鮮的蔬果與食材，
+                貼心幫你提菜袋、一起討論今天該煮哪些菜
+                讓買菜不再費力也不再無聊。
+
+            </p>
+            <div class="feature-card-controls">
+                <button class="feature-prev">＜</button>
+                <button class="feature-next">＞</button>
+            </div>
+            </div>
+
+            <div class="feature-card main">
+            <h3 class="feature-title">教學手機</h3>
+            <img
+                src="./pic/Service Features6.png"
+                alt="教學手機"
+                class="feature-pic"
+            />
+            <p class="feature-desc">
+                你想學怎麼跟孫子視訊嗎?
+                該怎麼看朋友傳的照片呢?
+                我們如同教自己家裡長輩一樣，
+                慢慢來、不趕時間。學會那一刻，
+                你的笑容，我們懂。
+            </p>
+            <div class="feature-card-controls">
+                <button class="feature-prev">＜</button>
+                <button class="feature-next">＞</button>
+            </div>
+            </div>
+
         </div>
         </section>
 
@@ -166,7 +261,7 @@
                 alt="王阿姨"
                 class="user-img"
             />
-            <p class="user-name">王阿姨，74歲</p>
+            <p class="user-name">王阿姨,74歲</p>
             </div>
 
             <!-- 對話泡泡：文字說明 -->
@@ -179,10 +274,11 @@
             <p class="bubble-text">
                 以前孩子上班忙，我都一個人在家，說實話，<br />
                 有時候一整天都沒人講話，連電視都不想開。<br />
-                後來用了這個服務，每週都有人來陪我聊聊天、<br />
+                後來用了這個服務，每週都有人來陪我聊天、<br />
                 教我用手機，還陪我去拿慢箋。<br />
-                她像是我的朋友，也跟我孫女年紀相仿，貼心得很。<br />
-                現在我每天都會期待她來，感覺自己好像又活過來了。
+                她像是我的朋友，也跟我孫女年紀相仿，<br />
+                貼心得很。現在我每天都會期待她來，<br />
+                感覺自己好像又活過來了。
             </p>
             </div>
         </div>
@@ -197,14 +293,21 @@
         <!-- 區塊標題 -->
         <h2 class="process-title">該如何使用「讓我來」呢？</h2>
 
-        <!-- 流程示意圖 -->
-        <div class="process-graphic-wrapper">
-            <img
-            src="./pic/process-graphic.png"
-            alt="STEP 01 → STEP 02 → STEP 03"
-            class="process-graphic"
-            />
+
+<!-- -----------------div三步驟----------------- -->
+        <section class="step-flow">
+        <div class="step">
+            <div class="circle">STEP<br><span>01</span></div>
         </div>
+        <div class="step">
+            <div class="circle">STEP<br><span>02</span></div>
+        </div>
+        <div class="step">
+            <div class="circle">STEP<br><span>03</span></div>
+        </div>
+        </section>
+
+
 
         <!-- 三個步驟說明（文字） -->
         <div class="process-text-wrapper-flex">

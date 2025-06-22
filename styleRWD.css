@@ -1,0 +1,1169 @@
+@media screen and (max-width: 430px) {
+  body {
+    padding: 0;
+    margin: 0;
+  }
+  header,
+  .container,
+  main,
+  footer {
+    width: 100vw;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+  }
+.main-banner{
+  flex-direction: column;
+}
+
+.logo {
+    width: 100%;
+    height: auto;
+    flex-shrink: 0;
+    aspect-ratio: 328 / 367;
+    }
+  /* Header 內容橫向排列，LOGO 左、漢堡右 */
+  header .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    padding: 0 8px;
+    box-sizing: border-box;
+  }
+
+  /* LOGO 左側，大小適中 */
+  .logo-fixed,
+  .logo {
+    max-width: 200px;
+    margin: 0;
+    align-self: center;
+  }
+
+  /* 漢堡按鈕靠右 */
+  .hamburger {
+    display: inline-flex;
+    position: static;
+    margin-left: 0;
+    margin-right: 0;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    z-index: 1001;
+  }
+  .hamburger span {
+    display: block;
+    width: 28px;
+    height: 4px;
+    margin: 4px 0;
+    background: #276E41;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+
+  /* 隱藏主選單 */
+  .main-menu {
+    display: none !important;
+  }
+
+  /* Hero 區塊 */
+  .hero-banner {
+    width: 100%;
+    height: 360px;
+    box-sizing: border-box;
+  }
+  .hero-icons-row{
+    display: none !important; /* 隱藏原有的圖示列 */
+  }
+  .hero-text-box {
+    display: flex;
+    left: 10%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    width: 80%;
+    height: 50%;
+    padding: 20px;
+    position: absolute; /* 添加絕對定位 */
+    right: 10%; /* 從右側開始偏移 10% */
+    top: 60%; /* 垂直居中 */
+    transform: translateY(-50%); /* 精確垂直居中 */
+  }
+  .hero-text-box h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0;
+    padding: 0 16px;
+    line-height: 1.5;
+  }
+  .hero-text-box p {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0;
+    padding: 0 16px;
+    line-height: 1.5;
+  }
+
+
+  .service-bubble-bg {
+    display: none !important; /* 隱藏原有的氣泡背景 */
+  }
+  .intro-title{
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .icon-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px 80px;
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 40px;}
+  /* 讓圖片不會超出畫面 */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* 登入按鈕手機字體 */
+  .btn-login {
+    font-size: 16px;
+    width: auto;
+    height: auto;
+
+    /* margin-top: 20px; */
+  }
+.popup-image {
+    flex: 0 0 280px;
+    margin-right: 16px;
+    margin-top: 30px;
+    margin-left: 30px;
+    }
+
+  .feature-card-controls {
+    /* display: none; */
+  }
+  .feature-card.small {
+    display: none !important;
+  }
+  .bubble-bg {
+    display: none !important;
+  }
+  .testimonial-section {
+    display: none !important; /* 先收起來使用者回饋 */
+  }
+  .testimonial-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    height: auto;
+  }
+  .testimonial-user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    position: static;
+    transform: none;
+  }
+  .user-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
+  .user-name {
+    font-size: 2.0rem;
+    margin-top: 8px;
+  }
+  .testimonial-bubble {
+    position: static !important;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: none;
+    box-shadow: none;
+    overflow: visible !important;
+  }
+  .bubble-text {
+    margin-top: 0;
+    width: 90vw;
+    max-width: 360px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    float: none !important;
+    display: block;
+    align-self: center;
+    background-color: #ABD37E;
+    border: #276E41 solid 5px;
+    border-radius: 20px;
+    padding: 16px 12px;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    font-size: 1.2rem;
+  }
+
+  .process-title {
+    margin-top: 0px;
+    font-size: 1.9rem;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  /* 3步驟：隱藏原始圓圈 */
+  .step-flow {
+    flex-direction: column;
+    gap: 30px;
+    margin: 20px auto;
+    left: 0;
+  }
+
+  .circle {
+    display: none !important; /* 隱藏原始圓圈 */
+  }
+
+  .step-flow::after {
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    right: auto;
+    width: 8px;
+    transform: translateX(-50%);
+    display: none;
+  }
+
+  .step-flow::before {
+    display: none;
+  }
+
+  /* 為 .process-step 添加新圓圈在上方 */
+  .process-text-wrapper-flex {
+    flex-direction: column !important;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+    counter-reset: step; /* 在父元素上重置計數器 */
+  }
+
+  .process-step {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+  }
+
+  .process-step::before {
+    content: "0" counter(step); /* 動態生成 01、02、03 */
+    counter-increment: step; /* 每個 .process-step 遞增 */
+    width: 50px; /* 圓圈寬度 */
+    height: 50px; /* 圓圈高度 */
+    background-color: #E27A5F; /* 與原始圓圈顏色一致 */
+    border-radius: 50%; /* 創建圓形 */
+    display: flex; /* 使用 Flexbox 確保居中 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    display: block; /* 作為塊級元素 */
+    margin: 0 auto 15px auto; /* 置於上方，與文字間距 */
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: "Noto Sans TC", sans-serif;
+    line-height: 50px; /* 確保文字垂直居中 */
+    
+  }
+
+  .step-heading {
+    font-size: 1.8rem;
+  }
+
+  .step-desc {
+    font-size: 1.5rem;
+  }
+
+  /* 配對 */
+  .cta-wrap {
+    flex-direction: column;
+    gap: 1.9em;
+    margin: 1em 0 10em 0;
+  }
+
+  .cta-card {
+    width: 90%;
+    height: 400px;
+    margin: 0 auto;
+  }
+
+  .cta-title {
+    font-size: 2.0rem;
+  }
+
+  .cta-button,
+  .cta-card a .cta-button,
+  .cta-button.cta-button-right {
+    font-size: 1.5rem;
+    width: 80% !important;
+    height: auto !important;
+    padding: 0.5em 1em !important;
+    box-sizing: border-box !important;
+    margin: 30px auto !important;
+    display: block !important;
+    text-decoration: none !important;
+  }
+
+  .cta-card a {
+    display: contents !important;
+  }
+  .footer-left{
+    width: 100%;
+    margin-top: 10px;
+  }
+  .footer-right p {
+    line-height: 2.4;
+    font-size: 1rem;
+    letter-spacing: 0.125rem;
+  }
+  .footer-middle ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    line-height: 2;
+    font-size: 1rem;
+    letter-spacing: 0.125rem;
+  }
+
+  .process-section {
+    margin: 100px auto 0;}
+
+
+    .hero-text-box-about p {
+        font-size: 16px;
+        max-width: 90%;
+        /* margin-right: 10%; */
+        margin-left: -.8%;
+        letter-spacing: 2px;
+        margin-bottom:70px;
+        line-height: 1.2;
+      justify-self: center;
+
+    }
+    /* 手機板垂直排列 */
+    .about-row,
+    .about-row.row-reverse{
+      flex-direction: column;
+      margin-bottom: 80px;
+    }
+    .about-image{
+      max-width: 100%;
+      height: auto;
+    }
+    .about-text {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0 20px;
+      text-align: center;
+      line-height: 1;
+      margin-top: 40px;
+    }
+    .about-paragraph{
+      font-size: 1.2rem;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .about-section {
+    width: 100%;
+    margin: 100px auto;}
+
+
+    .frog-row{
+    flex-direction: column;
+    align-items: center;
+    }
+    .frog-title{
+    font-size: 2.0rem;
+    }
+    .frog-image-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    margin-bottom: 20px;
+    }
+    .frog-image-main {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin-left: -60px;}
+
+    .fixed-right-img{
+      display: none !important;
+    }
+    .frog-text-wrapper{
+      width: 100%;
+      max-width: 430px;
+      /* padding: 0 20px; */
+      text-align: center;
+    }
+    .frog-title{
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .frog-paragraph{
+      font-size: 1.2rem;
+      line-height: 1;
+      margin-bottom: 50px;
+    }
+    .frog-section {
+      width: 100%;
+      margin: 10px auto;
+    }
+      .process-step {
+    flex: 0 0 220px;
+    text-align: center;
+    }
+
+    .intro-services {
+    padding: 50px 20px;}
+
+    /* -NEW部分--- */
+    /* 新聞卡片區塊 - 卡片縮圖 (activity1.png, activity2.png, etc.) */
+
+  .news-section{
+    display: flex;
+    flex-direction: column; /* 手機版垂直排列 */
+    margin: 50px auto;
+  }
+  .news-card {
+    display: flex;
+    flex-direction: column; /* 手機版垂直排列 */
+    align-items: center;
+    width: 90%; /* 卡片寬度適應螢幕 */
+    margin: 20px auto;
+    padding: 16px;
+    box-sizing: border-box;
+    background: #fff; /* 背景色，與主題一致 */
+    border-radius: 40px; /* 圓角，增加視覺美感 */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 輕微陰影 */
+    min-height: 0; /* 確保高度不會不必要地拉伸 */
+  }
+
+  .card-image {
+    width: 100%;
+    max-width: 300px; /* 限制圖片最大寬度 */
+    overflow: hidden; /* 防止圖片溢出 */
+    margin-right: 0px;
+    margin-top: 20px; /* 圖片與文字區塊間距 */
+  }
+
+  .card-image img {
+    width: 100%;
+    height: 350px; /* 固定高度，確保一致性 */
+    object-fit: cover; /* 圖片填滿容器，保持比例裁剪 */
+    object-position: center; /* 圖片居中 */
+    border-radius: 40px; /* 圖片圓角 */
+  }
+
+  /* 新聞卡片區塊 - 卡片圖示 (logohand.png) */
+  .card-icon {
+    display: none; /* 手機版隱藏圖示 */
+    width: 50px; /* 固定圖示大小 */
+    height: 50px;
+    margin-top: 10px;
+  }
+
+  .card-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 圖示保持完整比例 */
+  }
+
+  /* Footer Logo (logo.png) */
+  .footerlogo {
+    width: 100%;
+    max-width: 150px; /* 限制 Footer Logo 大小 */
+    margin: 0 auto;
+  }
+
+  .footerlogo img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* 卡片文字區域 */
+  .card-content {
+    width: 100%;
+    text-align: center; /* 文字居中 */
+    padding: 12px 0;
+  }
+
+  .card-title {
+    font-size: 1.7rem; /* 適應手機的標題大小 */
+    margin-bottom: 8px;
+    color: #276E41; /* 與主題色一致 */
+  }
+
+  .card-text {
+    font-size: 1.3rem; /* 適應手機的內文字號 */
+    line-height: 1.5;
+    margin: auto;
+    }
+
+.news-title{
+  margin-bottom: 30px; ;
+}
+.form-title{
+  font-size: 2.0rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.form-icon{
+  display: none !important; /* 隱藏原有的圖示 */
+}
+
+.form-question{
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.form-options label,
+.form-input{
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+.recommend-grid{
+  grid-template-columns: repeat(1, 1fr);}
+
+.recommend-container {
+    box-shadow: 0 8px 24px rgba(255, 171, 148, 0.2);
+    padding: 40px 0;}
+
+.recommend-title{
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 70px;
+}
+.recommend-close{
+  font-size: 2.0rem;
+}
+
+
+.service-modal-content {
+    text-align: center;
+} 
+.service-modal-content .modal-close{
+  right: 30px;
+  font-size: 1.9rem;
+}
+
+
+.news-cards {
+    gap: 20px;}
+
+.footer-slogan {
+    color: #276E41;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0.2em 0 0 70px;}
+
+.process-title,
+.section-title{
+  color: #276E41;
+}
+
+
+/* -儀錶板- */
+/* Dashboard 主卡片 */
+  .dashboard-card {
+    width: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+    margin: 40px auto;
+  }
+
+  .dashboard-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  /* Sidebar（左側） */
+ .sidebar {
+    width: 100%;
+    padding: 16px;
+    /* background: #f5f5f5; */
+    border-radius: 20px;
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+  }
+
+  .avatar-wrapper {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  /* .avatar-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+  } */
+
+  .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+ 
+
+  /* 歡迎問候 */
+  .greeting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    width: 100%;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .greeting-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+
+  .greeting-text {
+    font-size: 32px;
+    line-height: 1.5;
+  }
+
+  .highlight {
+    color: #276E41;
+    font-weight: bold;
+  }
+
+  .header-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  /* 今日行程 */
+  .today-schedule {
+    padding: 16px;
+    /* background: #fff; */
+    border-radius: 20px;
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+  }
+
+  .section-title-e {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #276E41;
+  }
+
+  .schedule-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .schedule-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    /* background: #f9f9f9; */
+    border-radius: 10px;
+    margin-bottom: 8px;
+  }
+
+  .schedule-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+
+  .schedule-info {
+    flex-grow: 1;
+  }
+
+  .schedule-type {
+    font-size: 15px;
+    color: #333;
+  }
+
+  .schedule-time {
+    font-size: 14px;
+    color: #666;
+  }
+
+  .call-btn {
+    padding: 6px 12px;
+    font-size: 14px;
+    /* background: #276E41; */
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  /* 月曆 */
+  .calendar-box {
+    padding: 16px;
+    background: #fff;
+    border-radius: 20px;
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+  }
+
+  .calendar-header {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .calendar-month {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .calendar-year {
+    font-size: 14px;
+    color: #666;
+  }
+
+  .calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+
+  .calendar-table th,
+  .calendar-table td {
+    padding: 8px;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .calendar-table th {
+    background: #e0e0e0;
+  }
+
+  .disabled {
+    color: #ccc;
+  }
+
+  /* 小卡片（陪伴就診、陪伴聊天） */
+  .card-visit-e,
+  .card-chat-f {
+    padding: 16px;
+    background: #fff;
+    border-radius: 20px;
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+  }
+
+  .card-title-e {
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: #276E41;
+  }
+
+  .card-content-e {
+    text-align: center;
+  }
+
+  .card-date-e,
+  .card-time-e {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 4px;
+  }
+
+  .card-client-e {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .card-actions-e {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .card-btn-e {
+    padding: 10px 30px;
+    font-size: 20px;
+    /* border: none; */
+    border-radius: 40px;
+    cursor: pointer;
+  }
+
+  /* .detail-btn-e { background: #e0e0e0; } */
+  /* .edit-btn-e { background: #ffd700; } */
+  /* .postpone-btn-e { background: #ff6347; color: #fff; } */
+
+  /* 小行程列表 */
+  .mini-schedule {
+    padding: 16px;
+    background: #fff;
+    border-radius: 20px;
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+  }
+
+  .mini-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .mini-list li {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .mini-dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+
+  .green { background: #28a745; }
+  .orange { background: #ff9800; }
+
+
+
+/* --AI--- */
+/* 客服對話框燈箱 */
+/* 客服對話框燈箱 */
+    .chat-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 2000;
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+
+    }
+
+    .chat-modal.hidden {
+        display: none;
+    }
+
+    .chat-modal.show {
+        display: block;
+    }
+
+    .chat-modal-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        max-height: 80vh;
+        background: #fff;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        padding: 20px;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+        overflow-y: auto;
+    }
+
+    .chat-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 20px;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+
+    .chat-title {
+        font-size: 18px;
+        margin-bottom: 15px;
+        text-align: center;
+        color: #276E41;
+    }
+
+    .chat-messages {
+        max-height: 60vh;
+        overflow-y: auto;
+        padding: 10px;
+        background: #f9f9f9;
+        border-radius: 5px;
+        margin-bottom: 15px;
+    }
+
+    .message {
+        padding: 10px;
+        margin: 5px 0;
+        border-radius: 20px;
+        max-width: 70%;
+    }
+
+    .message.bot {
+        background: #fdeaa6;
+        align-self: flex-start;
+    }
+
+    .message.user {
+        background: #b0ebd1;
+        align-self: flex-end;
+        left: 30px;
+    }
+
+    .chat-input {
+        display: flex;
+        gap: 10px;
+    }
+
+    #chatInput {
+        flex-grow: 1;
+        padding: 8px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+    }
+
+    .chat-input button {
+        padding: 8px 15px;
+        font-size: 14px;
+        background: #E27D60;
+        color: #fff;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+
+    .chat-input button:hover {
+        background: #1e5a34;
+    }
+}
+
+/* --網頁版-- */
+/* 桌面版和手機版通用樣式 */
+.chat-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+}
+
+.chat-modal.hidden {
+    display: none;
+}
+
+.chat-modal.show {
+    display: block;
+}
+
+.chat-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.chat-title {
+    font-size: 25px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #276E41;
+}
+
+.chat-messages {
+    max-height: 60vh;
+    overflow-y: auto;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    display: flex; /* 改為 flex 佈局 */
+    flex-direction: column; /* 垂直堆疊 */
+    gap: 10px; /* 訊息間距 */
+}
+
+.message {
+    padding: 10px;
+    margin:  0;
+    border-radius: 20px;
+    max-width: 70%;
+    word-wrap: break-word; /* 確保長文字換行 */
+}
+
+.message.bot {
+    background: #fdeaa6;
+    align-self: flex-start;
+}
+
+.message.user {
+    background: #b0ebd1;
+    align-self: flex-end;
+}
+
+.chat-input {
+    display: flex;
+    gap: 10px;
+}
+
+#chatInput {
+    flex-grow: 1;
+    padding: 8px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+.chat-input button {
+    padding: 8px 15px;
+    font-size: 14px;
+    background: #E27D60;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.chat-input button:hover {
+    background: #1e5a34;
+}
+
+/* 手機版特定樣式 (max-width: 430px) */
+@media screen and (max-width: 430px) {
+    .chat-modal {
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+    }
+
+    .chat-modal-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        max-height: 80vh;
+        background: #fff;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        padding: 20px;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+        overflow-y: auto;
+    }
+
+    .message.user {
+        left: 30px;
+    }
+}
+
+/* 桌面版特定樣式 (min-width: 431px) */
+@media screen and (min-width: 431px) {
+    .chat-modal-content {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 500px; /* 固定寬度，可根據需要調整 */
+        max-height: 80vh;
+        background: #fff;
+        border-radius: 40px; /* 全圓角 */
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        overflow-y: auto;
+    }
+
+    .message.user {
+        left: 0; /* 移除左偏移，靠右對齊 */
+    }
+}
+
+
+
+
+/* -----晃動AI----- */
+/* 通用樣式或媒體查詢外 */
+.ai-icon {
+    
+    height: auto;
+    cursor: pointer;
+    animation: shake 1.5s infinite ease-in-out; /* 定義動畫 */
+}
+
+/* 定義晃動動畫 */
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

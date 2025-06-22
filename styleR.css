@@ -102,31 +102,27 @@
     ============================= */
     .fixed-left-img,
     .fixed-right-img {
-    position: fixed;
+    position: absolute;
     height: 200px;
     z-index: 99;
     pointer-events: none;
     }
 
     .fixed-left-img {
-    left: 30px;
-    top: 50%;
-    transform: translateY(-50%);
+        left: -60px;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     .fixed-right-img {
-    right: 5px;
-    top: 75%;
-    transform: translateY(-50%);
+        right:-90px;
+        top: 75%;
+        transform: translateY(-50%);
     }
-
     /* =============================
     Header & 導覽列
     ============================= */
     .logo-fixed {
-    position: absolute;
-    top: 0.3em;
-    left: 1em;
     z-index: 10;
     }
 
@@ -140,7 +136,7 @@
     header {
     background-color: #F8F4F0;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-    padding: 3.5em 2em;
+    padding: 3.5em 2em 3.5em 0; /* 左側 padding 改為 0 */
     min-height: 64px;
     position: relative;
     }
@@ -148,10 +144,10 @@
     header .container {
     max-width: 1920px;
     margin: 0 auto;
+    padding-left: 0; /* 新增這行，確保內容貼齊左側 */
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    gap: 7em;
+    justify-content:space-between;
     height: 100%;
     }
 
@@ -159,6 +155,9 @@
     list-style: none;
     display: flex;
     gap: 5em;
+    justify-content: flex-end; /* 讓選單靠右 */
+    flex: 1;
+
     }
 
     .main-menu a {
@@ -276,13 +275,23 @@
 
 
     .forget-text {
-    font-size: 0.85em;
+    font-size: 1.2em !important;
     color: #555;
     margin: 1em 0 0.3em;
     text-align: left;
-    padding-left: 5em;
+    padding-left: 3em;
     }
 
+    .login-input {
+    font-size: 1.3em; /* 你想要的字體大小 */  
+    }
+    
+    .login-input:focus {
+    outline: none; /* 取消預設黑框 */
+    box-shadow: 0 0 0 2px #ea8f6c; /* 橘色外框陰影，可依需求調整顏色與粗細 */
+    border: 1.5px solid #ea8f6c;   /* 也可加上橘色邊框 */
+    transition: box-shadow 0.2s, border 0.2s;
+    }
     /* =============================
     Hero Banner
     ============================= */
@@ -345,7 +354,7 @@
     .hero-text-box-about p {
         font-size: 2em;
         color: #ffffff;
-        letter-spacing: 8px;
+        letter-spacing: 4px;
         margin-top: 0.5em;
         margin-left:19%;
         max-width: 62%;      /* 增加最大寬度 */
@@ -406,14 +415,14 @@
     justify-content: center;
     flex-wrap: wrap;
     align-items: stretch;
-    gap: 150px;
+    gap: 100px;
     }
 
     .feature-card {
     background: #fff;
     padding: 24px;
     border: 2px solid #ccc;
-    border-radius: 16px;
+    border-radius: 40px;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
     text-align: center;
     transition: transform 0.3s, border-color 0.3s;
@@ -428,7 +437,7 @@
     }
 
     .feature-card.main {
-    width: 450px;
+    width: 400px;
     transform: scale(1.05);
     border-color: #F49C64;
     box-shadow: 20px 20px 50px rgba(226, 125, 96, 0.4);
@@ -445,7 +454,7 @@
 
     .feature-title {
     font-size: 3.0rem; /* 原為 48px */
-    letter-spacing: 0.125rem; /* 約 2px 字距 */;
+    letter-spacing: 0.5rem; /* 約 2px 字距 */;
     margin-bottom: 10px;
     }
 
@@ -484,12 +493,13 @@
    使用者見證 Testimonial 區塊（改為 background 寫法）
 ============================= */
 .testimonial-section {
+display: flex;
   position: relative;
   width: 100%;
   padding: 200px 0;
   margin-top: 100px;
   background-color: transparent;
-  background-image: url('./pic/wave.png');
+  background-image: url('./pic/wave1.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
@@ -515,7 +525,7 @@
   content: "";
   position: absolute;
   top: 200px;
-  left: 80%;
+  left: 85%;
   width: 180px;
   height: 180px;
   background: url('./pic/leaf.png') no-repeat;
@@ -544,13 +554,13 @@
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-  height: 500px;
+  height:800px;
 }
 
 /* 使用者頭像區塊 */
 .testimonial-user {
   position: absolute;
-  top: 70%;
+  top: 50%;
   left: 4%;
   transform: translateY(-50%);
   text-align: center;
@@ -577,27 +587,26 @@
 /* 對話泡泡內容區塊 */
 .testimonial-bubble {
   position: absolute;
-  top: 70%;
-  right: -1%;
+  top: 50%;
+  right: -3%;
   transform: translateY(-50%);
   width: 800px;
-  text-align: left;
+  text-align: justify ;
 }
 
 .bubble-bg {
-  width: 800px;
+  width: 900px;
   height: 600px;
   display: block;
 }
 
 .bubble-text {
   position: absolute;
-  top: 20%;
-  left: 15%;
-  right: 10%;
-  font-size: 1.875rem; /* 約 30px */
+  top: 25%;
+  left: 19%;
+  font-size: 1.9rem; /* 約 30px */
   letter-spacing: 0.125rem;
-  line-height: 1.8;
+  line-height: 1.3;
   color: #fff;
   z-index: 3;
 }
@@ -621,21 +630,82 @@
     margin-bottom: 250px;
     line-height: 1.2;
     }
-
+/* 
     .process-graphic-wrapper {
     max-width: 1440px;
     width: 100%;
     margin-bottom: 100px;
     display: flex;
     justify-content: center;
-    }
+    } */
 
     .process-graphic {
     width: 100%;
     height: auto;
     display: block;
     }
+/* -------三步驟----- */
+    .step-flow {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    position: relative;
+    gap:23%; /* 控制圈與圈的距離 */
+    margin: 100px auto;
+    left: 20px;
+    }
 
+    .step-flow::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 60px;
+    right: 60px;
+    height: 10px;
+    background-color: #E27A5F;
+    z-index: 0;
+    }
+
+    .step-flow::before {
+    content: '';
+    position: absolute;
+    top: 52%;
+    right: 40px;
+    border: 12px solid transparent;
+    border-left: 18px solid #E27A5F; /* 箭頭顏色 */
+    transform: translateY(-50%);
+    z-index: 1;
+    }
+
+    .step {
+    position: relative;
+    z-index: 2;
+    }
+
+    .circle {
+    width: 200px;
+    height: 200px;
+    background-color: #E27A5F;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-family: "Noto Sans TC", sans-serif;
+    text-align: center;
+    line-height: 1.2;
+    font-size: 35px;
+    }
+
+    .circle span {
+    font-size: 50px;
+    }
+
+
+
+/* ------- */
     .process-text-wrapper-flex {
     display: flex;
     justify-content: space-between;
@@ -643,6 +713,7 @@
     max-width: 1440px;
     width: 95%;
     margin: 10px auto;
+    gap: 10%;
     }
 
     .process-step {
@@ -683,9 +754,9 @@
     .frog-row {
     display: flex;
     flex-wrap: wrap;            /* 螢幕窄時可換行 */
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    gap: 1em;                  /* 左右區塊之間保留一點間距 */
+    gap: 0.5em;                  /* 左右區塊之間保留一點間距 */
     margin-bottom: 2rem;
     }
 
@@ -701,6 +772,8 @@
     height: auto;
     object-fit: cover;          /* 若比例不同，可等比例裁切 */
     display: block;
+    margin-left: 120px; /* 新增這行，數值可依需求調整 */
+
     }
 
     /* 4. 右邊：吼蛙文字內容 */
@@ -743,7 +816,7 @@
     .cta-wrap {
     display: flex;
     justify-content: center;
-    gap: 20em;
+    gap: 13em;
     margin: 15em 0;
     }
 
@@ -848,7 +921,7 @@
     overflow: hidden;          /* 圓角下圖片區不外溢 */
     max-width: 1200px;          /* 最寬 900px，可隨需求調整 */
     width: 90%;                /* 寬度佔 90% 視窗，RWD 用 */
-    max-height: 500px;         /* 高度最大 500px，可依內容調整 */
+    max-height: 450px;         /* 高度最大 500px，可依內容調整 */
     }
 
     /* (3) 左側圖片容器 */
@@ -905,56 +978,88 @@
         font-size: 1.25rem; /* 原為 20px */
     letter-spacing: 0.125rem; /* 約 2px 字距 */;
         color: #333;
-        line-height: 1.6;
-        letter-spacing: 9px;
+        line-height: 1.7;
+        letter-spacing: 3px;
         text-align: justify;     /* 兩端對齊 */
     }
 
-
+    
     /* =============================
     介紹服務 Intro Services（只用圖片，不需文字）
     ============================= */
     .intro-services {
-
-
-    padding: 150px 20px;          /* 上下留白 100px、左右 20px */
-    background-color: #F8F4F0;     /* 如需背景色，可自行調整 */
-    text-align: center;            /* 標題置中 */
+        padding: 150px 20px;          /* 上下留白 100px、左右 20px */
+        background-color: #F8F4F0;     /* 如需背景色，可自行調整 */
+        text-align: center;            /* 標題置中 */
     }
-
+    
     .intro-title {
-    font-size: 3.0rem; /* 原為 48px */
-    letter-spacing: 0.125rem; /* 約 2px 字距 */;
-    color: #000;
-    margin-bottom: 150px;
-    font-weight: bold;
-    letter-spacing: 7.68px;
-
+        font-size: 3.0rem; /* 原為 48px */
+        letter-spacing: 0.125rem; /* 約 2px 字距 */;
+        color: #000;
+        margin-bottom: 150px;
+        font-weight: bold;
+        letter-spacing: 7.68px;
+        
     }
-
+    
     /* icon-grid：三欄 × 二列 */
     .icon-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 120px 60px;                /* row-gap 40px、col-gap 60px */
-    max-width: 1200px;             /* 最寬 1200px，置中 */
-    margin: 0 auto;
-    justify-items: center;         /* 每張圖置中對齊 */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 120px 60px;                /* row-gap 40px、col-gap 60px */
+        max-width: 80%;             /* 最寬 1200px，置中 */
+            min-width: 400px;
+        margin: 0 auto;
+        justify-items: center;         /* 每張圖置中對齊 */
     }
-
+    
     .service-icon {
-    width: 120px;                  /* 每張圖片顯示寬度為 120px */
-    height: auto;                  /* 自動按比例縮放 */
-    object-fit: contain;
-    transition: transform 0.7s, box-shadow 0.7s, filter 1s, opacity 1s;
-    cursor: pointer;
+        width: 120px;                  /* 每張圖片顯示寬度為 120px */
+        height: auto;                  /* 自動按比例縮放 */
+        object-fit: contain;
+        transition: transform 0.7s, box-shadow 0.7s, filter 1s, opacity 1s;
+        cursor: pointer;
     }
     .service-icon:hover {
-    transform: translateY(-8px) scale(1.15);
-    filter: none;
-    opacity: 1;
+        transform: translateY(-8px) scale(1.15);
+        filter: none;
+        opacity: 1;
     }
-
+    
+    /* =============================
+    雲朵泡泡
+    ============================= */
+    /* ✅ 使用圖片作為聊天泡泡背景 */
+    .service-section {
+    position: relative;
+  }
+.service-bubble-bg {
+    position: absolute;
+    bottom: -2vw;           /* 用 vw/vh 或百分比更彈性 */
+    left: 18%;              /* 視覺微調，避免太偏右 */
+    width: 80%;             /* 讓雲朵隨區塊縮放 */
+    max-width: 1440px;      /* 最大寬度，避免太大 */
+    min-width: 400px;       /* 最小寬度，避免太小 */
+    height: auto;           /* 高度自動，或用 aspect-ratio */
+    aspect-ratio: 1440/650; /* 保持圖片比例，現代瀏覽器支援 */
+    background: url('./pic/frog-bubble-bg.png') no-repeat;
+    background-size: contain;
+    background-position: left bottom;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 1;
+}
+    .icon-grid, .service-icons {
+    position: relative;
+    z-index: 100;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px 80px;
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+    }
 
     /* =============================
     about 區塊
@@ -1075,7 +1180,7 @@
     display: flex;
     align-items: flex-start;       /* 讓文字多行也能自動從頂端對齊 */
     background-color: #ffffff;     /* 白底 */
-    border-radius: 16px;           /* 卡片圓角 */
+    border-radius: 40px;           /* 卡片圓角 */
     box-shadow: 0 0 20px rgba(226, 125, 96, 0.4); 
                                     /* 淺珊瑚色陰影(偏橘)：x偏移0 y偏移0 模糊20px */
     padding: 20px;                 /* 卡片內距 */
@@ -1160,7 +1265,7 @@
     max-width: 1200px;                     /* 依 Figma 設計，大約 800px 寬即可 */
     background-color: #ffffff;                 /* 白底 */
     border: 1px solid #e8c4b5;                 /* 淺珊瑚色邊框 */
-    border-radius: 20px;                       /* 大卡片圓角 */
+    border-radius: 40px;                       /* 大卡片圓角 */
     box-shadow: 0 8px 24px rgba(255, 171, 148, 0.2); /* 大卡片陰影 */
     padding: 50px 50px;                        /* 內距，上下32、左右24 */
     box-sizing: border-box;
@@ -1201,7 +1306,7 @@
     align-items: flex-start;          /* 文字如果有多行，靠上對齊 */
     background-color: #ffffff;        /* 白底 */
     border: 1px solid #e8c4b5;        /* 淺珊瑚色邊框 */
-    border-radius: 12px;              /* 卡片圓角 */
+    border-radius: 40px;              /* 卡片圓角 */
     box-shadow: 0 4px 16px rgba(226, 125, 96, 0.2); /* 淺珊瑚陰影 */
     padding: 16px 20px;               /* 卡片內距上下 16、左右 20 */
     position: relative;
@@ -1236,7 +1341,7 @@
     }
 
     .form-options label {
-    font-size: 1.25rem; /* 原為 20px */
+    font-size: 1.5rem; /* 原為 20px */
     letter-spacing: 0.125rem; /* 約 2px 字距 */;
     color: #444;
     display: flex;
@@ -1253,11 +1358,11 @@
 
     /* (5-1c) 單行文字輸入 .form-input */
     .form-input {
-    font-size: 1.125rem; /* 原為 18px */
+    font-size: 1.2rem; /* 原為 18px */
     letter-spacing: 0.125rem; /* 約 2px 字距 */;
     padding: 15px 12px;
     border: 1px solid #ccc;
-    border-radius: 20px;
+    border-radius: 40px;
     width: 100%;
     box-sizing: border-box;
     outline: none;
@@ -1270,11 +1375,11 @@
 
     /* (5-1d) 多行文字 .form-textarea */
     .form-textarea {
-    font-size: 1.125rem; /* 原為 18px */
+    font-size: 1.2rem; /* 原為 18px */
     letter-spacing: 0.125rem; /* 約 2px 字距 */;
     padding: 15px 12px;
     border: 1px solid #ccc;
-    border-radius: 20px;
+    border-radius: 40px;
     width: 100%;
     box-sizing: border-box;
     outline: none;
@@ -1295,9 +1400,6 @@
     gap: 8px;              /* 兩個 input 之間間距 */
     }
 
-    .form-emergency .form-input {
-    /* 同上 .form-input 樣式，就不再重複 */
-    }
 
     /* (5-2) 卡片右側 Icon .form-icon */
     .form-icon {
@@ -1307,6 +1409,7 @@
     justify-content: center;
     align-items: flex-start; /* 預設置頂，如果要往下可自行加 margin-top */
     margin-left: 12px;
+    margin-top:-10px;
     }
 
     .form-icon img {
@@ -1363,7 +1466,7 @@
     .profile-modal-content {
     position: relative;
     background-color: #ffffff;
-    border-radius: 16px;
+    border-radius: 40px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
     width: 90%;
     max-width: 500px;
@@ -1454,10 +1557,10 @@
     }
 
     .profile-tag {
-    font-size: 0.875rem; /* 原為 14px */;
+    font-size:1rem; /* 原為 14px */;
     color: #ea8f6c;
     border: 1px solid #ea8f6c;
-    border-radius: 12px;
+    border-radius: 20px;
     padding: 4px 8px;
     white-space: nowrap;
     }
@@ -1539,10 +1642,10 @@
     border: 1px solid #e8c4b5;
     border-radius: 20px;
     box-shadow: 0 8px 24px rgba(255, 171, 148, 0.2);
-    padding: 40px 30px;
+    padding: 40px 50px;
     box-sizing: border-box;
     width: 100%;
-    max-width: 1200px;
+    max-width: 900px;
     position: relative;
     }
 
@@ -1562,7 +1665,7 @@
     top: -10px; /* 調整位置讓它靠近標題 */
     background: none;
     border: none;
-    font-size: 5.0rem; /* 原為 80px */
+    font-size: 3.0rem; /* 原為 80px */
     letter-spacing: 0.125rem; /* 約 2px 字距 */;
     line-height: 1;
     color: #444;
@@ -1576,12 +1679,17 @@
 
     .recommend-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
     width: 100%;
+    margin: 0 auto;      /* 置中 */
+
     }
 
     .recommend-card {
+    max-width: 400px;    /* 新增這行，依需求調整 */
+    min-height: 550px;   /* 新增這行，數值可依需求調整 */
+    margin: 20px;
     background-color: #ffffff;
     border: 1px solid #ccc;
     border-radius: 20px;
@@ -1590,6 +1698,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
     padding-bottom: 16px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
@@ -1612,9 +1721,9 @@
     letter-spacing: 0.125rem; /* 約 2px 字距 */;
     font-weight: bold;
     color: #276E41;
-    margin: 12px 0 8px 0;
+    margin: 42px 0 28px 0;
     text-align: center;
-    padding: 0 12px;
+    ;
     }
 
     .recommend-card-desc {
@@ -1660,7 +1769,7 @@
     ============================= */
     .dashboard-card {
     background-color: #ffffff;
-    border-radius: 20px;
+    border-radius: 40px;
     box-shadow: 0 8px 32px rgba(226, 125, 96, 0.15);
     padding: 24px;       /* 內距可以再微調 */
     margin: 90px auto;   /* 與頁面其他區塊的外距 */
@@ -1733,7 +1842,7 @@
     background-color: #ffffff;
     color: #ea8f6c;
     border: 1px solid #ea8f6c;
-    border-radius: 24px;
+    border-radius: 40px;
     font-size: 1.125rem; /* 原為 18px */
     letter-spacing: 0.125rem; /* 約 2px 字距 */;
     font-weight: bold;
@@ -1752,7 +1861,7 @@
     .greeting {
     grid-area: greeting;
     background-color: #ffffff;
-    border-radius: 20px;
+    border-radius: 40px;
     box-shadow: 0 4px 20px rgba(226, 125, 96, 0.2);
     padding: 20px 30px;
     display: flex;
@@ -1786,7 +1895,7 @@
     /* 右上關閉 X */
     .header-close {
     position: absolute;
-    top: 25px;
+    top: 15px;
     right: 30px;
     background: none;
     border: none;
@@ -1806,7 +1915,7 @@
     .today-schedule {
     grid-area: today;
     background-color: #ffffff;
-    border-radius: 20px;
+    border-radius: 40px;
     box-shadow: 0 4px 20px rgba(226, 125, 96, 0.2);
     padding: 20px 30px;
     display: flex;
@@ -1839,7 +1948,7 @@
     display: flex;
     align-items: center;
     background-color: #FDF7F2;
-    border-radius: 12px;
+    border-radius: 40px;
     padding: 12px 20px;
     }
 
@@ -1877,7 +1986,7 @@
     letter-spacing: 0.125rem; /* 約 2px 字距 */;
     padding: 6px 12px;
     border: none;
-    border-radius: 20px;
+    border-radius: 40px;
     cursor: pointer;
     transition: background-color 0.2s, transform 0.2s;
     }
@@ -1892,7 +2001,7 @@
     .calendar-box {
     grid-area: calendar;
     background-color: #ffffff;
-    border-radius: 16px;
+    border-radius: 40px;
     box-shadow: 0 4px 16px rgba(226, 125, 96, 0.2);
     padding: 16px;
     }
@@ -1946,7 +2055,7 @@
     .card-visit-e {
     grid-area: visit;
     background-color: #ffffff;
-    border-radius: 16px;
+    border-radius: 40px;
     box-shadow: 0 4px 16px rgba(226, 125, 96, 0.2);
     padding: 20px 24px;
     display: flex;
@@ -1992,7 +2101,7 @@
     height: 50px;
     padding: 6px 55px;
     border: none;
-    border-radius: 12px;
+    border-radius: 40px;
     cursor: pointer;
     transition: background-color 0.2s;
     margin-right: auto;
@@ -2037,7 +2146,7 @@
     .card-chat-f {
     grid-area: chat;
     background-color: #ffffff;
-    border-radius: 16px;
+    border-radius: 40px;
     box-shadow: 0 4px 16px rgba(226, 125, 96, 0.2);
     padding: 20px 24px;
     display: flex;
@@ -2051,7 +2160,7 @@
     .mini-schedule- {
     grid-area: mini;
     background-color: #ffffff;
-    border-radius: 16px;
+    border-radius: 40px;
     box-shadow: 0 4px 16px rgba(226, 125, 96, 0.2);
     padding: 16px 20px;
     }
@@ -2137,6 +2246,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: -1.5em;  /* 新增這行，數值可依需求微調 */
     }
 
     .footerlogo img {
@@ -2148,7 +2258,7 @@
     color: #276E41;
     font-size: 1.5em;
     font-weight: bold;
-    margin: 0.5em 0 0 20px;
+    margin: 0.2em 0 0 20px;
     line-height: 1.6;
     letter-spacing: 2.4px;
     }
@@ -2196,3 +2306,286 @@
     .footer-right a:hover {
     color: #ea8f6c;
     }
+
+
+
+    /* 超連結 */
+    .no-link-style {
+    color: inherit;         /* 繼承父層文字顏色 */
+    text-decoration: none;  /* 移除底線 */
+    font-weight: normal;    /* 可選：不加粗 */
+}
+
+
+/* 服務燈箱CSS */
+.popup-body {
+  display: flex;
+  gap: 24px; /* 圖文之間的間距 */
+  align-items: flex-start;
+  flex-wrap: wrap; /* 手機斷行顯示用 */
+}
+.service-modal-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  background: #fff;
+  padding: 2em 2em;
+  border-radius: 40px;
+  max-width: 900px;
+  width: 95vw;
+  max-height: 70vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+  text-align: left;
+  height: auto;
+}
+
+.popup-image {
+    flex: 0 0 280px; /* 固定圖片寬度 */
+    margin-right: 16px;
+    margin-top: 75px;
+}
+
+.popup-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 40px;
+    display: block;
+}
+
+.popup-textblock {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.popup-title {
+  margin-top: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.popup-text {
+  line-height: 1.6;
+}
+
+
+    /* ai客服 */
+    /* 全局樣式，適用於所有螢幕尺寸 */
+.ai-customer-service {
+    position: fixed;
+    bottom: 50px; /* 距離底部 20px */
+    right: 50px; /* 距離右側 20px */
+    z-index: 1000; /* 確保在最上層 */
+}
+
+.ai-icon {
+    width: 150px; /* 根據圖片大小調整，建議與 AI.png 的尺寸匹配 */
+    height: 150px;
+    object-fit: contain; /* 保持圖片比例 */
+    cursor: pointer; /* 提示可點擊 */
+}
+
+/*媒體查詢*/
+@media (max-width: 1440px) {
+    .ai-customer-service {
+    position: fixed;
+    bottom: 50px; /* 距離底部 20px */
+    right: 90px; /* 距離右側 20px */
+    z-index: 1000; /* 確保在最上層 */
+}
+
+.ai-icon {
+    width: 120px; /* 根據圖片大小調整，建議與 AI.png 的尺寸匹配 */
+    height: 120px;
+    object-fit: contain; /* 保持圖片比例 */
+    cursor: pointer; /* 提示可點擊 */
+}
+
+
+
+
+    .container,
+    main,
+    .intro-services,
+    .footer-container {
+        max-width: 100%;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+    .service-bubble-bg {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        bottom: 50px;
+        height: 900px;
+        max-width: 1440px;
+        min-width: 800px;
+        aspect-ratio: unset;
+        background-size: contain;
+        background-position: center bottom;
+        display: block;
+    }
+    .icon-grid {
+        max-width: 100%;
+        width: 100%;
+        bottom: 20px;
+    }
+
+
+
+    .sub-title,
+    .right,
+    .section-title,
+    .cta-title,
+    .intro-title,
+    .feature-title,
+    .about-title,
+    .news-title,
+    .form-title {
+    font-size: 2.2rem;
+    }
+    .feature-desc,
+    .about-paragraph,
+    .card-title,
+    .card-text,
+    .form-intro,
+    .form-question,
+    .form-options label,
+    .form-submit-btn,
+    .footer-middle h4,
+    .footer-right h4,
+    .footer-slogan,
+    .main-menu a ,
+    .btn-login{
+        font-size: 1.5rem
+    };
+    .service-icon {
+        width: 90px;
+    }
+    
+    .btn-sub{
+    font-size: 1.1rem;
+}
+.hero-text-box-about p{
+    font-size: 1.5rem;
+}
+    
+
+    .icon-grid {
+    
+        gap: 120px 60px;                /* row-gap 40px、col-gap 60px */
+        max-width: 50%;             /* 最寬 1200px，置中 */
+            min-width: 400px;
+        margin: 0 auto;
+        justify-items: center;         /* 每張圖置中對齊 */
+    }
+
+
+    .hero-banner {
+    height: 600px;
+}
+
+
+.frog-paragraph{
+    line-height: 1;
+}
+
+
+
+
+.modal-content {
+    max-height: 90vh;      /* 限制最大高度 */
+}
+
+/* 服務區塊調整 */
+.feature-section {
+        padding: 40px 10px;
+    }
+    .section-title {
+        font-size: 2.5rem;
+        margin: 40px 0 40px;
+    }
+    .feature-row {
+        gap: 60px;
+    }
+    .feature-card,
+    .feature-card.main {
+        width: 350px;
+        padding: 16px;
+    }
+    .feature-card.small {
+        width: 300px;
+    }
+    .feature-title {
+        font-size: 1.5rem;
+    }
+    .feature-desc {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+    .feature-card-controls{
+        gap:50px;
+    }
+/* 使用者 */
+    .testimonial-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height:300px;
+    }
+
+/* 吼蛙裝飾圖（偽元素 before） */
+.testimonial-section::before {
+  
+  top: 10px;
+  left: 5%;
+  width: 180px;
+  height: 180px;
+
+}
+
+
+
+/* 腳印圖示：需要在 HTML 加入 <div class="testimonial-foot-icon"></div> */
+.testimonial-foot-icon {
+  
+  top: 370px;
+  left: 1%;
+  width: 150px;
+  height: 150px;
+}
+  .card-btn-e {
+        font-size: 15px;
+    }
+ .process-title {
+    margin-bottom: 200px;
+    }
+ .frog-section {
+    margin: 170px auto;   /* 上方 160px，水平置中 */
+    line-height: 1.5;
+    }
+    .schedule-type,
+    .schedule-time  {
+    font-size: 17px; /* 原為 20px */
+    
+    }
+
+
+
+ /* ai客服 */
+/* 針對 max-width: 430px 的 RWD 調整 */
+@media screen and (max-width: 430px) {
+    .ai-customer-service {
+        bottom: 20px; /* 在手機版稍微靠近底部 */
+        right: 20px;
+    }
+
+    .ai-icon {
+        width: 80px; /* 手機版縮小圖標 */
+        height: 80px;
+    }
+}
+}
