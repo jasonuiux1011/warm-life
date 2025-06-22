@@ -66,6 +66,16 @@
     transition: 0.3s;
   }
 
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    width: 100%;
+    padding: 0 20px ;
+    box-sizing: border-box;
+  }
+
   /* 隱藏主選單 */
   .main-menu {
     display: none !important;
