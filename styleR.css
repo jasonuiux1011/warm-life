@@ -412,7 +412,7 @@
 
     .feature-row {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     align-items: stretch;
     gap: 100px;
@@ -2412,8 +2412,8 @@ display: flex;
     .intro-services,
     .footer-container {
         max-width: 100%;
-        padding-left: 24px;
-        padding-right: 24px;
+        /* padding-left: 24px;
+        padding-right: 24px; */
     }
     .service-bubble-bg {
         left: 50%;
@@ -2588,4 +2588,21 @@ display: flex;
         height: 110px;
     }
 }
+
+
+}
+
+
+.custom-link {
+    color: #ffffff; /* 藍色，類似超連結預設顏色，但更鮮豔 */
+    text-decoration: unset; /* 移除底線 */
+    font-weight: bold; /* 粗體 */
+    transition: color 0.3s; /* 過渡效果 */
+}
+
+.custom-link:hover {
+    color: #faff5e; /* 滑過時變成橙色 */
+    text-decoration: none; /* 滑過時移除底線，可選 */
+    font-size: 1.2rem; /* 滑過時放大字體 */
+    transform: translateY(-2px); 
 }

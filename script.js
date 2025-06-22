@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     showCard(currentIndex);
 
-    // 客服對話框邏輯
+   // 客服對話框邏輯
     const aiIcon = document.querySelector('.ai-icon');
     const chatModal = document.querySelector('#chatModal');
     const chatClose = document.querySelector('.chat-close');
@@ -277,7 +277,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => {
                     const botMessage = document.createElement('div');
                     botMessage.classList.add('message', 'bot');
-                    botMessage.textContent = '感謝您的訊息！正在處理您的問題...';
+                    if (messageText === '立即配對') {
+                    const link = document.createElement('a');
+                    link.href = 'https://jasonuiux1011.github.io/warm-life/Form-Section.html';
+                    link.textContent = '【  點擊前往配對  】';
+                    link.target = '_blank'; // 開啟新標籤
+                    link.classList.add('custom-link');
+                    botMessage.appendChild(link);
+                    } else {
+                        botMessage.textContent = '感謝您的訊息！正在處理您的問題...';
+                    }
                     chatMessages.appendChild(botMessage);
                     chatMessages.scrollTop = chatMessages.scrollHeight;
                 }, 500);
@@ -316,5 +325,3 @@ function hideModal() {
         modal.classList.add("hidden");
     }
 }
-
-

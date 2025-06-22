@@ -1,5 +1,7 @@
 @media screen and (max-width: 440px) {
-  
+  .feature-rr{
+    display: none; /* 預設隱藏 */
+}
   body {
     padding: 0;
     margin: 0;
@@ -935,7 +937,7 @@
     }
 
     .message.user {
-        background: #B8DABA;
+        background: #83af86;
         align-self: flex-end;
         left: 30px;
     }
@@ -1033,7 +1035,7 @@
 }
 
 .message.user {
-    background: #7a987c;
+    background: #83af86;
     align-self: flex-end;
     color: #fff; /* 確保文字顏色對比 */
 }
