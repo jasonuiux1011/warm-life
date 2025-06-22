@@ -1029,11 +1029,13 @@
 .message.bot {
     background: #E27D60;
     align-self: flex-start;
+    color: #fff; /* 確保文字顏色對比 */
 }
 
 .message.user {
-    background: #B8DABA;
+    background: #7a987c;
     align-self: flex-end;
+    color: #fff; /* 確保文字顏色對比 */
 }
 
 .chat-input {
