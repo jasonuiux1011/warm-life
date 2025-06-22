@@ -1027,12 +1027,12 @@
 }
 
 .message.bot {
-    background: #fdeaa6;
+    background: #e6a18e;
     align-self: flex-start;
 }
 
 .message.user {
-    background: #b0ebd1;
+    background: #B8DABA;
     align-self: flex-end;
 }
 
