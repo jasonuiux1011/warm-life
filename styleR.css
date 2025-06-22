@@ -2576,8 +2576,8 @@ display: flex;
 
 
  /* ai客服 */
-/* 針對 max-width: 430px 的 RWD 調整 */
-@media screen and (max-width: 430px) {
+/* 針對 max-width: 440px 的 RWD 調整 */
+@media screen and (max-width: 440px) {
     .ai-customer-service {
         bottom: 20px; /* 在手機版稍微靠近底部 */
         right: 20px;
