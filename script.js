@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', function() {
             document.querySelector('.main-banner').classList.remove('visible');
             // 2秒淡出後再跳轉
             setTimeout(function() {
-                window.location.href = 'index.html'; // 請改成你的首頁檔名
+                window.location.href = 'index.html'; // 首頁
             }, 2000);
         }, 4000);
     }
